@@ -10,4 +10,20 @@ namespace PMPBundle\Repository;
  */
 class ContaPatrimonialRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function buscarPorId($id) {
+
+        try {
+            $sql = $this->createQueryBuilder('cp')
+                ->select('cp')
+                ->andWhere('cp.id = :id')
+                ->setParameter('id', $id);
+
+            $result= $sql->getQuery()->getResult();
+            return $result;
+
+        } catch(\Exception $e){
+
+            return null;
+        }
+    }
 }

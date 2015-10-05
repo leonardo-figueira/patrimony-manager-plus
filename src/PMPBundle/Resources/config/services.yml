@@ -1,0 +1,5 @@
+services:
+    #REGULAR SERVICES
+    pmp.conta_patrimonial_rules:
+        class: PMPBundle\Services\ContaPatrimonial\ContaPatrimonialBusca
+        arguments: ["@doctrine.orm.entity_manager","@service_container"]
