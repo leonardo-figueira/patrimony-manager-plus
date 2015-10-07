@@ -13,7 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
- * @Route("/contaPatrimonial")
+ * @Route("/conta-patrimonial")
  */
 class ContaPatrimonialController extends Controller
 {
