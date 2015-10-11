@@ -78,7 +78,7 @@ body {
 
 .navbar-cls-top .navbar-brand {
     color: #fff;
-    background: #DD1533;
+    background: #149c82;
     width: 255px;
     text-align: center;
     height: 75px;
@@ -87,7 +87,7 @@ body {
     padding-top: 25px;
 }
 .navbar-cls-top .navbar-brand:hover {
-    background: #DD1533;
+    background: #149c82;
     color: #fff;
 }
 .header-right {
@@ -105,13 +105,13 @@ body {
 
     .user-img-div img {
         height: 130px;
-        border: 5px solid #DD1533;
+        border: 5px solid #149c82;
     }
 
    
 .active-menu {
     background-color: #fff!important;
-    border-left: 5px solid #DD1533;
+    border-left: 5px solid #149c82;
 }
 .active-menu-top {
     background-color: #000!important;
@@ -200,7 +200,7 @@ border-bottom: 1px solid #D2D2D2;
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: #DD1533;
+    background-color: #149c82;
 }
 
 .navbar-default .navbar-toggle {
@@ -259,7 +259,7 @@ min-height: 0;
 .notifications-wrapper .nav > li > a:hover, .nav > li > a:focus {
 text-decoration: none;
 background-color: #FFF!important;
-    color:#DD1533;
+    color:#149c82;
 
 }
 .notifications-wrapper .dropdown-menu {

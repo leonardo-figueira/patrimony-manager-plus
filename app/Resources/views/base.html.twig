@@ -68,13 +68,15 @@
 
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                                    <i class="fa fa-user-plus"></i>  <i class="fa fa-caret-down"></i>
+                                    <i class="fa fa-cogs"> </i>  <i class="fa fa-caret-down"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href=""><i class="fa fa-cogs"></i>&nbsp;Configura&ccedil;&otilde;es</a>
+                                    <li>
+                                        <a href="{{ path("usuario_index") }}"><i class="fa fa-user-plus"></i> Usu&aacute;rios</a>
                                     </li>
                                     <li class="divider"></li>
-                                    <li><a href=""><i class="fa fa-sign-out"></i> Logout</a>
+                                    <li>
+                                        <a href="{{ path('logout') }}"><i class="fa fa-sign-out"></i> Logout</a>
                                     </li>
                                 </ul>
                             </li>
@@ -97,7 +99,7 @@
                             </li>
 
                             <li>
-                                <a id="conta-patrimonial" href="{{ path("_contaPatrimonial_index") }}"><i class="glyphicon glyphicon-list-alt"></i>Contas Patrimoniais</a>
+                                <a id="conta-patrimonial" href="{{ path("contaPatrimonial_index") }}"><i class="glyphicon glyphicon-list-alt"></i>Contas Patrimoniais</a>
                             </li>
 
                             <li>

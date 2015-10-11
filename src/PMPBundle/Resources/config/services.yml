@@ -3,3 +3,6 @@ services:
     pmp.conta_patrimonial_rules:
         class: PMPBundle\Services\ContaPatrimonial\ContaPatrimonialBusca
         arguments: ["@doctrine.orm.entity_manager","@service_container"]
+    pmp.usuario_busca:
+        class: PMPBundle\Services\Usuario\UsuarioBusca
+        arguments: ["@doctrine.orm.entity_manager","@service_container","@security.token_storage"]

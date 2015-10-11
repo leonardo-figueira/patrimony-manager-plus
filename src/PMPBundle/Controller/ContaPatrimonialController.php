@@ -18,7 +18,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class ContaPatrimonialController extends Controller
 {
     /**
-     * @Route("/", name="_contaPatrimonial_index")
+     * @Route("/", name="contaPatrimonial_index")
      * @Template()
      */
     public function indexAction(){
