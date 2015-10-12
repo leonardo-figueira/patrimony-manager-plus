@@ -57,12 +57,6 @@ class Usuario implements UserInterface
      */
     private $centroCusto;
 
-    /**
-     * @var string $salt
-     *
-     * @ORM\Column(name="salt", type="string", length=255)
-     */
-    private $salt;
 
     /**
      * @var array
@@ -70,6 +64,13 @@ class Usuario implements UserInterface
      * @ORM\Column(type="array")
      */
     private $roles = array();
+
+    /**
+     * @var string $salt
+     *
+     * @ORM\Column(name="salt", type="string", length=255)
+     */
+    private $salt;
 
     public function __construct(){
         $this->salt = base_convert(sha1(uniqid(mt_rand(),true)),16,36);

@@ -35,9 +35,22 @@ class UsuarioBusca
 
     }
 
+    public function buscarTodos(){
+        return $this->repository->findAll();
+    }
+
     public function salvar(PMPEntity\Usuario $usuario){
         $this->em->persist($usuario);
         $this->em->flush();
     }
 
+    public function excluir(PMPEntity\Usuario $usuario){
+        $this->em->remove($usuario);
+        $this->em->flush();
+    }
+
+    public function alterar(PMPEntity\Usuario $usuario){
+        $this->em->merge($usuario);
+        $this->em->flush();
+    }
 }

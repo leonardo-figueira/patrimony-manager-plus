@@ -1,16 +1,63 @@
-{% extends '::base.html.twig' %}
-
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Patrimony Manager Plus{% endblock %}</title>
+    {% block stylesheets %}
+        <!-- BOOTSTRAP STYLES-->
+        <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" />
+        <!-- FONTAWESOME ICONS STYLES-->
+        <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" />
+        <!--CUSTOM STYLES-->
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+        <!-- JQUERY SCRIPTS -->
+        <script src="{{ asset('js/jquery-1.11.1.js') }}"></script>
+        <!-- BOOTSTRAP SCRIPTS -->
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
+        <!-- METISMENU SCRIPTS -->
+        <script src="{{ asset('js/jquery.metisMenu.js') }}"></script>
+        <!-- CUSTOM SCRIPTS -->
+        <script src="{{ asset('js/custom.js') }}"></script>
+    {% endblock %}
+</head>
+<body style="background: #eee !important;">
 {% block body %}
     {% if error %}
         <div>{{ error.message }}</div>
     {% endif %}
-    <form action="{{ path('login_check') }}" method="post">
-        <label for="username">Login:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}"/>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password"/>
-
-        <button type="submit">login</button>
-    </form>
+        <div class="container" style="width:345px;margin-top:120px;padding-top:8px;">
+            <p><br/></p>
+            <div class="row">
+                <div class="    ">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="page-header" style="text-align: center;">
+                                <h3><img src="{{ asset('img/logo.png') }}">
+                            </div>
+                            <form action="{{ path('login_check') }}" method="post" role="form">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                        <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" placeholder="Login"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                        <input type="password" class="form-control" id="password" name="_password" placeholder="Senha"/>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <button type="submit" class="btn btn-info btn-lg btn-block">login</button>
+                                <p><br/></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+</body>
+</html>

@@ -27,7 +27,10 @@ class UsuarioController extends Controller implements ContainerAwareInterface
      */
     public function indexAction(){
 
-        return array();
+        $serviceUsuario = $this->get('pmp.usuario_busca');
+        $lista = $serviceUsuario->buscarTodos();
+
+        return array('usuarios' => $lista);
     }
 
     /**
@@ -73,6 +76,57 @@ class UsuarioController extends Controller implements ContainerAwareInterface
             ->getEncoder($user);
 
         return $encoder->encodePassword($plainPassword, $user->getSalt());
+    }
+
+    /**
+     * @Route("/excluir/{usuario}", name="usuario_excluir")
+     * @Template()
+     */
+    public function excluirAction(Usuario $usuario){
+        try{
+            $serviceUsuario = $this->get('pmp.usuario_busca');
+            $serviceUsuario->excluir($usuario);
+
+            $this->addFlash('success', 'Usuario Excluido Com sucesso');
+
+            return $this->redirectToRoute('usuario_index');
+        }catch (Exception $ex){
+            echo $ex->getMessage();
+        }
+
+    }
+
+    /**
+     * @Route("/editar/{usuario}", name="usuario_editar")
+     * @Template()
+     */
+    public function editarAction(Usuario $usuario){
+
+        if($_POST){
+
+            $usuario->setNome($_POST['txtNome']);
+            $usuario->setUserName($_POST['txtLogin']);
+            if($_POST['txtSenha'] != ''){
+                $usuario->setPassword($this->encodePassword($usuario, $_POST['txtSenha']));
+            }
+            $usuario->setCargo($_POST['cbCargo']);
+            $usuario->setCentroCusto($_POST['cbCentroCusto']);
+            $usuario->setRoles(array($_POST['cbPerfil']));
+
+            try{
+                $serviceUsuario = $this->get('pmp.usuario_busca');
+                $serviceUsuario->alterar($usuario);
+
+                $this->addFlash('success', 'Usuario Alterado Com sucesso');
+
+                return $this->redirectToRoute('usuario_index');
+            }catch (Exception $ex){
+                echo $ex->getMessage();
+            }
+
+        }
+
+        return array('usuario' => $usuario);
     }
 
 }

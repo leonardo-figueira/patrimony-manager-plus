@@ -8,7 +8,7 @@
     </div>
 
     {% for flashMessage in app.session.flashbag.get('success') %}
-        <div class="alert alert-success">
+        <div class="alert alert-success col-md-12">
             {{ flashMessage }}
         </div>
     {% endfor %}
@@ -26,19 +26,37 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th>Login</th>
-                            <th>Permiss&atilde;o</th>
-                            <th></th>
-                            <th></th>
+                            <th width="10%">Cod</th>
+                            <th width="40%">Login</th>
+                            <th width="40%">Permiss&atilde;o</th>
+                            <th width="10%"></th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        {% if usuarios %}
+                            {% for usuario in usuarios %}
+                            <tr>
+                                <td>{{ usuario.id }}</td>
+                                <td>{{ usuario.userName }}</td>
+                                <td>
+                                    {% if usuario.roles[0] == ''  %}
+                                        Usu&aacute;rio
+                                    {% endif %}
+                                    {% if usuario.roles[0] == 'ROLE_ADMIN'  %}
+                                        Administrador
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a class="btn btn-default" href="{{ path('usuario_editar', { 'usuario' : usuario.id }) }}" title="Editar"><i class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir o usuario {{ usuario.userName }}?')" href="{{ path('usuario_excluir', { 'usuario' : usuario.id }) }}" title="Excluir"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="4">Sem Usu&aacute;rios Cadastrados</td>
+                            </tr>
+                        {% endif %}
                         </tbody>
                     </table>
                 </div>
