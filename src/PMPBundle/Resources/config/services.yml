@@ -6,3 +6,6 @@ services:
     pmp.usuario_busca:
         class: PMPBundle\Services\Usuario\UsuarioBusca
         arguments: ["@doctrine.orm.entity_manager","@service_container","@security.token_storage"]
+    pmp.conta_patrimonial_edicao:
+        class: PMPBundle\Services\ContaPatrimonial\ContaPatrimonialEdicao
+        arguments: ["@doctrine.orm.entity_manager","@service_container"]

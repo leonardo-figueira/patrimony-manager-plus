@@ -9,3 +9,13 @@
 /composer.phar
 /vendor/
 /web/bundles/
+/.idea/workspace.xml
+
+# Build data
+/build/
+.buildpath
+.project
+.settings/*
+.idea/*
+*.log
+output/*

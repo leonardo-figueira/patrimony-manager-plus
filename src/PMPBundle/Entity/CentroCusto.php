@@ -5,17 +5,17 @@ namespace PMPBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ContaPatrimonial
+ * Cargo
  *
- * @ORM\Table(name="TBCONTA_PATRIMONIAL")
- * @ORM\Entity(repositoryClass="PMPBundle\Repository\ContaPatrimonialRepository")
+ * @ORM\Table(name="tbcentro_custo")
+ * @ORM\Entity(repositoryClass="PMPBundle\Repository\CentroCustoRepository")
  */
-class ContaPatrimonial
+class CentroCusto
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="NRCONTA_PATRIMONIAL", type="integer")
+     * @ORM\Column(name="nrcentro_custo", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -24,13 +24,13 @@ class ContaPatrimonial
     /**
      * @var string
      *
-     * @ORM\Column(name="NOCONTA_PATRIMONIAL", type="string", length=255)
+     * @ORM\Column(name="nocentro_custo", type="string", length=255)
      */
-    private $nome;
+    private $nocentroCusto;
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="Patrimonio", mappedBy="contaPatrimonial", cascade={"all"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Patrimonio", mappedBy="centroDeCusto", cascade={"all"}, orphanRemoval=true)
      **/
     private $patrimonios;
 
@@ -46,27 +46,19 @@ class ContaPatrimonial
     }
 
     /**
-     * Set nome
-     *
-     * @param string $nome
-     *
-     * @return ContaPatrimonial
+     * @return string
      */
-    public function setNome($nome)
+    public function getNocentroCusto()
     {
-        $this->nome = $nome;
-
-        return $this;
+        return $this->nocentroCusto;
     }
 
     /**
-     * Get nome
-     *
-     * @return string
+     * @param string $nocentroCusto
      */
-    public function getNome()
+    public function setNocentroCusto($nocentroCusto)
     {
-        return $this->nome;
+        $this->nocentroCusto = $nocentroCusto;
     }
 
     /**
@@ -84,6 +76,7 @@ class ContaPatrimonial
     {
         $this->patrimonios = $patrimonios;
     }
+
 
 }
 
