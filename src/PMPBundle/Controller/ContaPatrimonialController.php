@@ -12,6 +12,7 @@ use PMPBundle\Entity as PMPEntity;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @Route("/conta-patrimonial")
@@ -43,12 +44,13 @@ class ContaPatrimonialController extends Controller
     }
 
     /**
-     * @Route("/pmp/conta-patrimonial/novo", name="pmp_contaPatrimonial_novo")
+     * @Route("/salvar", name="contaPatrimonial_salvar")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function salvarAction(Request $request)
     {
+
         $manipulador = $this->get('pmp.conta_patrimonial_edicao');
 
         $entity = new PMPEntity\ContaPatrimonial();
@@ -59,6 +61,14 @@ class ContaPatrimonialController extends Controller
         return $this->redirectToRoute('contaPatrimonial_index');
     }
 
+    /**
+     * @Route("/cadastro", name="pmp_contaPatrimonial_cadastro")
+     * Template()
+     */
+    public function cadastrarAction()
+    {
+        return $this->render('PMPBundle:ContaPatrimonial:cadastrar.html.twig');
+    }
 
 
 }
