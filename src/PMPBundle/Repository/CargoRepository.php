@@ -10,4 +10,20 @@ namespace PMPBundle\Repository;
  */
 class CargoRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function buscarPorId($id) {
+
+        try {
+            $sql = $this->createQueryBuilder('c')
+                ->select('c')
+                ->andWhere('c.id = :id')
+                ->setParameter('id', $id);
+
+            $result= $sql->getQuery()->getSingleResult();
+            return $result;
+
+        } catch(\Exception $e){
+
+            return null;
+        }
+    }
 }

@@ -8,7 +8,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * Usuario
  *
- * @ORM\Table(name="tbusuario")
+ * @ORM\Table(name="TBUSUARIO")
  * @ORM\Entity(repositoryClass="PMPBundle\Repository\UsuarioRepository")
  */
 class Usuario implements UserInterface
@@ -16,7 +16,7 @@ class Usuario implements UserInterface
     /**
      * @var integer
      *
-     * @ORM\Column(name="nrusuario", type="integer")
+     * @ORM\Column(name="NRUSUARIO", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -25,35 +25,34 @@ class Usuario implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="nousuario", type="string", length=255)
+     * @ORM\Column(name="NOUSUARIO", type="string", length=255)
      */
     private $nome;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="login", type="string", length=255)
+     * @ORM\Column(name="LOGIN", type="string", length=255)
      */
     private $userName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="senha", type="string", length=255)
+     * @ORM\Column(name="SENHA", type="string", length=255)
      */
     private $password;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="nrcargo", type="integer")
+     * @ORM\ManyToOne(targetEntity="Cargo", inversedBy="usuarios")
+     * @ORM\JoinColumn(name="NRCARGO", referencedColumnName="NRCARGO")
      */
     private $cargo;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="nrcentro_custo", type="integer")
+     * @ORM\Column(name="NRCENTRO_CUSTO", type="integer")
      */
     private $centroCusto;
 
@@ -68,7 +67,7 @@ class Usuario implements UserInterface
     /**
      * @var string $salt
      *
-     * @ORM\Column(name="salt", type="string", length=255)
+     * @ORM\Column(name="SALT", type="string", length=255)
      */
     private $salt;
 

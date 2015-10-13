@@ -39,6 +39,8 @@ class UsuarioController extends Controller implements ContainerAwareInterface
      */
     public function cadastrarAction(){
 
+        $serviceCargo = $this->get('pmp.cargo_busca');
+
         if($_POST){
 
             $usuario = new Usuario();
@@ -46,7 +48,7 @@ class UsuarioController extends Controller implements ContainerAwareInterface
             $usuario->setNome($_POST['txtNome']);
             $usuario->setUserName($_POST['txtLogin']);
             $usuario->setPassword($this->encodePassword($usuario, "unimed179"));
-            $usuario->setCargo($_POST['cbCargo']);
+            $usuario->setCargo($serviceCargo->buscarPorId($_POST['cbCargo']));
             $usuario->setCentroCusto($_POST['cbCentroCusto']);
             $usuario->setRoles(array($_POST['cbPerfil']));
 
@@ -63,7 +65,9 @@ class UsuarioController extends Controller implements ContainerAwareInterface
 
         }
 
-        return array();
+        $cargos = $serviceCargo->buscarTodos();
+
+        return array('cargos'=>$cargos);
 
     }
 

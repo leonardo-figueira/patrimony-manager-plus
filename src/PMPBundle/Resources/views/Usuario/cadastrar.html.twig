@@ -7,6 +7,10 @@
         </div>
     </div>
 
+    <div class="alert alert-warning" role="alert">
+        <i class="fa fa-warning"></i>&nbsp;<strong>Aten&ccedil;&atilde;o!</strong> Usu&aacute;rios ser&atilde;o cadastrados por padr&atilde;o com a senha ''unimed179''
+    </div>
+
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -38,9 +42,9 @@
                         </div>
                         <div class="col-md-3">
                             <select id="cbCargo" name="cbCargo" class="form-control">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                                {% for cargo in cargos %}
+                                <option value="{{ cargo.id }}">{{ cargo.nome }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>

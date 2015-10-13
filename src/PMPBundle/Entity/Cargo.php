@@ -3,6 +3,7 @@
 namespace PMPBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Cargo
@@ -27,6 +28,16 @@ class Cargo
      * @ORM\Column(name="NOCARGO", type="string", length=255)
      */
     private $nome;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Usuario", mappedBy="cargo")
+     */
+    private $usuarios = array();
+
+    public function __construct()
+    {
+        $this->usuarios = new ArrayCollection();
+    }
 
 
     /**
@@ -62,5 +73,14 @@ class Cargo
     {
         return $this->nome;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getUsuarios()
+    {
+        return $this->usuarios;
+    }
+
 }
 
