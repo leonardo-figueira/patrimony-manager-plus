@@ -9,3 +9,6 @@ services:
     pmp.cargo_busca:
             class: PMPBundle\Services\Cargo\CargoBusca
             arguments: ["@doctrine.orm.entity_manager","@service_container"]
+    pmp.conta_patrimonial_edicao:
+        class: PMPBundle\Services\ContaPatrimonial\ContaPatrimonialEdicao
+        arguments: ["@doctrine.orm.entity_manager","@service_container"]
