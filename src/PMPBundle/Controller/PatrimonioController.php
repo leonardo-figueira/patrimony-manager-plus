@@ -16,32 +16,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 /**
  * @Route("/conta-patrimonial")
  */
-class ContaPatrimonialController extends Controller
+class PatrimonioController extends Controller
 {
-    /**
-     * @Route("/", name="contaPatrimonial_index")
-     * @Template()
-     */
-    public function indexAction(){
-
-        $contasPatrimoniais = null;
-
-        If($_POST) {
-
-            If ($_POST['txtId']) {
-
-                $id = $_POST['txtId'];
-
-                $service = $this->get('pmp.conta_patrimonial_rules');
-
-                $contasPatrimoniais = $service->buscarPorId($id);
-
-            }
-        }
-
-        return array('contasPatrimoniais' => $contasPatrimoniais);
-    }
-
     /**
      * @Route("/pmp/conta-patrimonial/novo", name="pmp_contaPatrimonial_novo")
      * @param Request $request
@@ -51,12 +27,18 @@ class ContaPatrimonialController extends Controller
     {
         $manipulador = $this->get('pmp.conta_patrimonial_edicao');
 
-        $entity = new PMPEntity\ContaPatrimonial();
-        $entity->setNome($request->request->get('contaPatrimonialNome'));
+        $entity = new PMPEntity\Patrimonio();
+        $entity->setContaPatrimonial($request->request->get('patrimonioContaPatrimonial'));
+        $entity->setPlaqueta($request->request->get('patrimoniPlaqueta'));
+        $entity->setCentroDeCusto($request->request->get('patrimonioCentroCusto'));
+        $entity->setDtaquisicao($request->request->get('patrimonioDtAquisicao'));
+        $entity->setNopatrimonio($request->request->get('patrimonioDescicao'));
+        $entity->setSituacao($request->request->get('patrimonioSituacao'));
+        $entity->setNrnotafiscal($request->request->get('patrimonioNotaFiscal'));
 
         $manipulador->salvar($entity);
 
-        return $this->redirectToRoute('contaPatrimonial_index');
+        return $this->redirectToRoute('index');
     }
 
 

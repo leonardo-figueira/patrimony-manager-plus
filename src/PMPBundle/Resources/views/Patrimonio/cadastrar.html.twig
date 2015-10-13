@@ -1,0 +1,75 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-head-line">Cadastro - Conta Patrimonial</h1>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Cadastro
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" method="post" action="{{ path('pmp_contaPatrimonial_novo') }}">
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label for="lblNome">Plaqueta</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" id="patrimoniPlaqueta" name="patrimoniPlaqueta" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label for="lblNome">Descricao</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" id="patrimonioDescicao" name="patrimonioDescicao" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label for="lblNome">Data Aquisição</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" id="patrimonioDtAquisicao" name="patrimonioDtAquisicao" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label for="lblNome">Situação</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" id="patrimonioSituacao" name="patrimonioSituacao" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label for="lblNome">Nota Fiscal(nº)</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" id="patrimonioNotaFiscal" name="patrimonioNotaFiscal" class="form-control">
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="row" style="text-align: center;">
+                        <button class="btn btn-labeled btn-info" type="submit" name="salvar" id="btnSalvar">Salvar</button>
+                        <a class="btn btn-default" href="{{ path('usuario_index') }}">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

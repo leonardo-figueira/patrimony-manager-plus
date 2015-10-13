@@ -24,6 +24,13 @@ class Patrimonio
     /**
      * @var string
      *
+     * @ORM\Column(name="nrplaqueta", type="string", length=100)
+     */
+    private $plaqueta;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="nopatrimonio", type="string", length=255)
      */
     private $nopatrimonio;
@@ -192,6 +199,22 @@ class Patrimonio
     public function setImagem($imagem)
     {
         $this->imagem = $imagem;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlaqueta()
+    {
+        return $this->plaqueta;
+    }
+
+    /**
+     * @param string $plaqueta
+     */
+    public function setPlaqueta($plaqueta)
+    {
+        $this->plaqueta = $plaqueta;
     }
 
 
