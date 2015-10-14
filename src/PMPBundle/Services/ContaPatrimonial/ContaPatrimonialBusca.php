@@ -35,12 +35,16 @@ class ContaPatrimonialBusca
 
     }
 
-    public function buscarPorId($id) {
-        return $this->repository->buscarPorId($id);
+    public function buscarPorId($id,$nome) {
+        return $this->repository->buscarPorId($id,$nome);
     }
 
     public function buscarTodos() {
         return $this->repository->findAll();
+    }
+
+    public function findConta($id) {
+        return $this->repository->find($id);
     }
 
 }

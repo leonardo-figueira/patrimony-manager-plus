@@ -36,6 +36,13 @@ class ContaPatrimonial
 
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="STATUS", type="integer")
+     */
+    private $status;
+
+    /**
      * Get id
      *
      * @return integer
@@ -84,6 +91,24 @@ class ContaPatrimonial
     {
         $this->patrimonios = $patrimonios;
     }
+
+    /**
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param string $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+
 
 }
 

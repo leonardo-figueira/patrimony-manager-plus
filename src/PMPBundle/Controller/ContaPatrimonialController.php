@@ -9,6 +9,7 @@
 namespace PMPBundle\Controller;
 
 use PMPBundle\Entity as PMPEntity;
+use PMPBundle\Services as PMPService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -29,13 +30,24 @@ class ContaPatrimonialController extends Controller
 
         If($_POST) {
 
-            If ($_POST['txtId']) {
+
+
+            If ($_POST['txtId'] !='' and $_POST['txtNome'] == '') {
 
                 $id = $_POST['txtId'];
+                $nome = '';
+                /* @var PMPService\ContaPatrimonial\ContaPatrimonialBusca  */
+                $service = $this->get('pmp.conta_patrimonial_busca');
+                $contasPatrimoniais = $service->buscarPorId($id,$nome);
 
-                $service = $this->get('pmp.conta_patrimonial_rules');
+            }
 
-                $contasPatrimoniais = $service->buscarPorId($id);
+            If ($_POST['txtId'] == '' and $_POST['txtNome'] != '') {
+                $nome = $_POST['txtNome'];
+                $id = '';
+                /* @var PMPService\ContaPatrimonial\ContaPatrimonialBusca  */
+                $service = $this->get('pmp.conta_patrimonial_busca');
+                $contasPatrimoniais = $service->buscarPorId($id,$nome);
 
             }
         }
@@ -61,6 +73,27 @@ class ContaPatrimonialController extends Controller
         return $this->redirectToRoute('contaPatrimonial_index');
     }
 
+
+    /**
+     * @Route("/editar", name="contaPatrimonial_editar")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function editarAction(Request $request)
+    {
+
+        $service = $this->get('pmp.conta_patrimonial_busca');
+        $entity = $service->findConta($request->request->get('contaPatrimonialId'));
+
+        $manipulador = $this->get('pmp.conta_patrimonial_edicao');
+
+        $entity->setNome($request->request->get('contaPatrimonialNome'));
+
+        $manipulador->editar($entity);
+
+        return $this->redirectToRoute('contaPatrimonial_index');
+    }
+
     /**
      * @Route("/cadastro", name="contaPatrimonial_cadastro")
      * Template()
@@ -68,6 +101,18 @@ class ContaPatrimonialController extends Controller
     public function cadastrarAction()
     {
         return $this->render('PMPBundle:ContaPatrimonial:cadastrar.html.twig');
+    }
+
+    /**
+     * @Route("/editar-conta/{id}", name="contaPatrimonial_editarContaPatrimonial")
+     * Template()
+     */
+    public function editarContaPatrimonialAction($id)
+    {
+        $service = $this->get('pmp.conta_patrimonial_busca');
+        $entity = $service->findConta($id);
+
+        return $this->render('PMPBundle:ContaPatrimonial:editar.html.twig',array('entity'=> $entity));
     }
 
     /**

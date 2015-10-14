@@ -40,5 +40,10 @@ class ContaPatrimonialEdicao
         $this->em->flush();
     }
 
+    public function editar(PMPEntity\ContaPatrimonial $contaPatrimonial)
+    {
+        $this->em->merge($contaPatrimonial);
+        $this->em->flush();
+    }
 
 }

@@ -10,18 +10,27 @@ namespace PMPBundle\Repository;
  */
 class ContaPatrimonialRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function buscarPorId($id) {
+    public function buscarPorId($id, $nome)
+    {
+        $nomelike = strtoupper($nome);
 
         try {
             $sql = $this->createQueryBuilder('cp')
-                ->select('cp')
-                ->andWhere('cp.id = :id')
-                ->setParameter('id', $id);
+                ->select('cp');
 
-            $result= $sql->getQuery()->getResult();
+            if ($id != '') {
+                $sql->andWhere('cp.id = :id');
+                $sql->setParameter('id', $id);
+            }
+            if ($nome != '') {
+                $sql->andWhere($sql->expr()->like('cp.nome', ':nomelike'));
+                $sql->setParameter('nomelike', "%{$nomelike}%");
+            }
+            $sql->andWhere('cp.status = 1');
+            $result = $sql->getQuery()->getResult();
             return $result;
 
-        } catch(\Exception $e){
+        } catch (\Exception $e) {
 
             return null;
         }
