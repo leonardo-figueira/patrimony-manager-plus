@@ -24,6 +24,14 @@ class CentroCusto
     /**
      * @var string
      *
+     * @ORM\Column(name="idcentro_custo", type="float")
+     */
+    private $nrcentroCusto;
+
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="nocentro_custo", type="string", length=255)
      */
     private $nocentroCusto;
@@ -75,6 +83,22 @@ class CentroCusto
     public function setPatrimonios($patrimonios)
     {
         $this->patrimonios = $patrimonios;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNrcentroCusto()
+    {
+        return $this->nrcentroCusto;
+    }
+
+    /**
+     * @param string $nrcentroCusto
+     */
+    public function setNrcentroCusto($nrcentroCusto)
+    {
+        $this->nrcentroCusto = $nrcentroCusto;
     }
 
 

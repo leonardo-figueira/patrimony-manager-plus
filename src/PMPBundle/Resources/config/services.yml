@@ -12,3 +12,6 @@ services:
     pmp.conta_patrimonial_edicao:
         class: PMPBundle\Services\ContaPatrimonial\ContaPatrimonialEdicao
         arguments: ["@doctrine.orm.entity_manager","@service_container"]
+    pmp.patrimonio_edicao:
+        class: PMPBundle\Services\Patrimonio\PatrimonioEdicao
+        arguments: ["@doctrine.orm.entity_manager","@service_container"]

@@ -39,4 +39,8 @@ class ContaPatrimonialBusca
         return $this->repository->buscarPorId($id);
     }
 
+    public function buscarTodos() {
+        return $this->repository->findAll();
+    }
+
 }

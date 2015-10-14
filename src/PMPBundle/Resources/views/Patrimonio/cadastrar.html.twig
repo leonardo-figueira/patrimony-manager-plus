@@ -13,7 +13,7 @@
                 Cadastro
             </div>
             <div class="panel-body">
-                <form class="form-horizontal" method="post" action="{{ path('pmp_contaPatrimonial_novo') }}">
+                <form class="form-horizontal" method="post" action="{{ path('patrimonio_salvar') }}">
                     <div class="form-group">
                         <div class="col-md-2">
                             <label for="lblNome">Plaqueta</label>
@@ -37,7 +37,8 @@
                             <label for="lblNome">Data Aquisição</label>
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="patrimonioDtAquisicao" name="patrimonioDtAquisicao" class="form-control">
+                            <input type="text" id="patrimonioDtAquisicao" name="patrimonioDtAquisicao"
+                                   class="form-control">
                         </div>
                     </div>
 
@@ -55,17 +56,16 @@
                             <label for="lblNome">Nota Fiscal(nº)</label>
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="patrimonioNotaFiscal" name="patrimonioNotaFiscal" class="form-control">
+                            <input type="text" id="patrimonioNotaFiscal" name="patrimonioNotaFiscal"
+                                   class="form-control">
                         </div>
                     </div>
-
-
-
-
-
-                    <div class="row" style="text-align: center;">
-                        <button class="btn btn-labeled btn-info" type="submit" name="salvar" id="btnSalvar">Salvar</button>
-                        <a class="btn btn-default" href="{{ path('usuario_index') }}">Cancelar</a>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="btn btn-labeled btn-info" type="submit" name="salvar" id="btnSalvar">Salvar
+                            </button>
+                            <a class="btn btn-default" href="{{ path('usuario_index') }}">Cancelar</a>
+                        </div>
                     </div>
                 </form>
             </div>

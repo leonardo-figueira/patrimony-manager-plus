@@ -62,12 +62,24 @@ class ContaPatrimonialController extends Controller
     }
 
     /**
-     * @Route("/cadastro", name="pmp_contaPatrimonial_cadastro")
+     * @Route("/cadastro", name="contaPatrimonial_cadastro")
      * Template()
      */
     public function cadastrarAction()
     {
         return $this->render('PMPBundle:ContaPatrimonial:cadastrar.html.twig');
+    }
+
+    /**
+     * @Route("/listar-contas-patrimoniais", name="contaPatrimonial_listar")
+     * @Template()
+     */
+    public function listarAction(){
+
+        $service = $this->get('pmp.usuario_busca');
+        $lista = $service->buscarTodos();
+
+        return array('contasPatrimoniais' => $lista);
     }
 
 
