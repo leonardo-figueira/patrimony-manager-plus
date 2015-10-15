@@ -47,7 +47,18 @@ class PatrimonioController extends Controller
      */
     public function cadastrarAction()
     {
-        return $this->render('PMPBundle:Patrimonio:cadastrar.html.twig');
+        $serviceCentroCusto = $this->get('pmp.centro_custo_busca');
+
+        $centroCustos = $serviceCentroCusto->findAll();
+
+        $serviceContaPatrimonial = $this->get('pmp.conta_patrimonial_busca');
+
+        $contasPatrimoniais = $serviceContaPatrimonial->findAll();
+
+        $data = array(
+            'centroCustos' => $centroCustos,
+            'contaPatrimoniais'=> $contasPatrimoniais);
+        return $this->render('PMPBundle:Patrimonio:cadastrar.html.twig',$data);
     }
 
 

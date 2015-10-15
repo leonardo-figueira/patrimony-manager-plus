@@ -72,6 +72,12 @@ class Patrimonio
      */
     private $contaPatrimonial;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Imagem", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $imagem;
+
 
     /**
      * @return int

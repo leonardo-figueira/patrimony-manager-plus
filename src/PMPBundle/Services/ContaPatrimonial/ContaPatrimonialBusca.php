@@ -43,8 +43,8 @@ class ContaPatrimonialBusca
         return $this->repository->findAll();
     }
 
-    public function findConta($id) {
-        return $this->repository->find($id);
+    public function findAll() {
+        return $this->repository->findAll();
     }
 
 }

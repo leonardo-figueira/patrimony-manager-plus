@@ -1,6 +1,6 @@
 <?php
 
-namespace PMPBundle\Services\ContaPatrimonial;
+namespace PMPBundle\Services\CentroCusto;
 
 use PMPBundle\Entity as PMPEntity;
 use PMPBundle\Repository as PMPRepository;
@@ -8,7 +8,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Doctrine\ORM\EntityManager;
 
-class ContaPatrimonialBusca
+class CentroCustoBusca
 {
     /**
      * @var EntityManager
@@ -35,6 +35,10 @@ class ContaPatrimonialBusca
 
     }
 
+
+    public function findAll(){
+        return $this->repository->findAll();
+    }
 
 
 }
