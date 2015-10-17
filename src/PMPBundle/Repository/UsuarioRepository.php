@@ -10,4 +10,21 @@ namespace PMPBundle\Repository;
  */
 class UsuarioRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function buscarPorNome($login) {
+
+        try {
+            $sql = $this->createQueryBuilder('u')
+                ->select('u')
+                ->andWhere('u.userName = :login')
+                ->setParameter('login', $login);
+
+            $result= $sql->getQuery()->getSingleResult();
+
+            return $result;
+
+        } catch(\Exception $e){
+
+            return null;
+        }
+    }
 }

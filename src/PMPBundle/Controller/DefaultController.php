@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends Controller implements ContainerAwareInterface
 {
@@ -41,7 +42,11 @@ class DefaultController extends Controller implements ContainerAwareInterface
 
         }
 
-        return array('usuario' => $usr);
+        $json = array('log'=>'borala');
+
+        $response = new JsonResponse($json);
+
+        return array('usuario' => $usr, $response);
     }
 
     public function setContainer(ContainerInterface $container = null){

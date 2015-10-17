@@ -39,6 +39,10 @@ class UsuarioBusca
         return $this->repository->findAll();
     }
 
+    public function buscarPorNome($login){
+        return $this->repository->buscarPorNome($login);
+    }
+
     public function salvar(PMPEntity\Usuario $usuario){
         $this->em->persist($usuario);
         $this->em->flush();

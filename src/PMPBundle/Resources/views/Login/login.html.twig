@@ -24,9 +24,9 @@
 <body style="background: #eee !important;">
 {% block body %}
     {% if error %}
-        <div>{{ error.message }}</div>
+            <div class="alert alert-danger" style="text-align: center;">Usu&aacute;rio ou senha Inv&aacute;lidos</div>
     {% endif %}
-        <div class="container" style="width:345px;margin-top:120px;padding-top:8px;">
+        <div class="container" style="width:345px;margin-top:50px;padding-top:8px;">
             <p><br/></p>
             <div class="row">
                 <div class="    ">
@@ -39,7 +39,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                        <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" placeholder="Login"/>
+                                        <input type="text" class="form-control" id="username" name="_username" value="" placeholder="Login"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -49,7 +49,7 @@
                                     </div>
                                 </div>
                                 <hr/>
-                                <button type="submit" class="btn btn-info btn-lg btn-block">login</button>
+                                <button type="submit" class="btn btn-info btn-lg btn-block">LOGIN</button>
                                 <p><br/></p>
                             </form>
                         </div>
