@@ -6,6 +6,7 @@ use PMPBundle\Entity as PMPEntity;
 use PMPBundle\Repository as PMPRepository;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\Security\Acl\Exception\Exception;
 
 class PatrimonioEdicao
 {
