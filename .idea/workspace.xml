@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4c5c12c-10fe-46b8-b859-dd10fabbd5fa" name="Default" comment="">
+<<<<<<< HEAD
       <change type="DELETED" beforePath="C:\Desenvolvimento\wamp\www\patrimonyManagerPlus\src\PMPBundle\Resources\translations\messages.fr.xlf" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/img/logo.png" afterPath="$PROJECT_DIR$/web/img/logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PMPBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/PMPBundle/Controller/DefaultController.php" />
@@ -12,6 +13,21 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PMPBundle/Resources/views/Login/login.html.twig" afterPath="$PROJECT_DIR$/src/PMPBundle/Resources/views/Login/login.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PMPBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/PMPBundle/Resources/config/services.yml" />
+=======
+      <change type="DELETED" beforePath="C:\wamp\www\patrimony-manager-plus\web\js\jquery-1.11.1.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PMPBundle/Services/CentroCusto/CentroCustoBusca.php" afterPath="$PROJECT_DIR$/src/PMPBundle/Services/CentroCusto/CentroCustoBusca.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PMPBundle/Services/ContaPatrimonial/ContaPatrimonialBusca.php" afterPath="$PROJECT_DIR$/src/PMPBundle/Services/ContaPatrimonial/ContaPatrimonialBusca.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PMPBundle/Entity/Imagem.php" afterPath="$PROJECT_DIR$/src/PMPBundle/Entity/Imagem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PMPBundle/Entity/Patrimonio.php" afterPath="$PROJECT_DIR$/src/PMPBundle/Entity/Patrimonio.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PMPBundle/Controller/PatrimonioController.php" afterPath="$PROJECT_DIR$/src/PMPBundle/Controller/PatrimonioController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PMPBundle/Services/Patrimonio/PatrimonioEdicao.php" afterPath="$PROJECT_DIR$/src/PMPBundle/Services/Patrimonio/PatrimonioEdicao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app.php" afterPath="$PROJECT_DIR$/web/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app_dev.php" afterPath="$PROJECT_DIR$/web/app_dev.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/bootstrap.css" afterPath="$PROJECT_DIR$/web/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PMPBundle/Resources/views/Patrimonio/cadastrar.html.twig" afterPath="$PROJECT_DIR$/src/PMPBundle/Resources/views/Patrimonio/cadastrar.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="patrimonyManagerPlus.iws" />
@@ -34,6 +50,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="MobileController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PMPBundle/Controller/MobileController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -65,6 +82,14 @@
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="patrimonio.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PMPBundle/Resources/public/js/Patrimonio/patrimonio.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+              <folding />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
             </state>
           </provider>
         </entry>
@@ -72,6 +97,7 @@
       <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="-6.62069">
               <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
               <folding />
@@ -84,26 +110,50 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="4" column="25" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="25" />
+=======
+            <state vertical-scroll-proportion="-3.6545455">
+              <caret line="40" column="53" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="UsuarioController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PMPBundle/Controller/UsuarioController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-7.3076925">
               <caret line="49" column="79" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="79" />
               <folding />
+=======
+      <file leaf-file-name="cadastrar.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/PMPBundle/Resources/views/Patrimonio/cadastrar.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.24637681">
+              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+              <folding>
+                <element signature="e#3265#3285#0#HTML" expanded="true" />
+                <element signature="e#4006#4026#0#HTML" expanded="true" />
+              </folding>
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Usuario.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PMPBundle/Entity/Usuario.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-3.3454545">
               <caret line="128" column="31" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="31" />
+=======
+      <file leaf-file-name="ContaPatrimonialController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PMPBundle/Controller/ContaPatrimonialController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.076923">
+              <caret line="81" column="32" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="32" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
               <folding />
             </state>
           </provider>
@@ -111,13 +161,23 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/PMPBundle/Entity/Estabelecimento.php" />
+=======
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
         <option value="$PROJECT_DIR$/src/PMPBundle/Entity/SetorRepository.php" />
         <option value="$PROJECT_DIR$/src/PMPBundle/Entity/Setor.php" />
         <option value="$PROJECT_DIR$/src/PMPBundle/Entity/CargoRepository.php" />
@@ -142,7 +202,6 @@
         <option value="$PROJECT_DIR$/src/PMPBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/PMPBundle/Resources/config/services.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/PMPBundle/Entity/CentroCusto.php" />
         <option value="$PROJECT_DIR$/src/PMPBundle/Entity/ContaPatrimonial.php" />
@@ -151,11 +210,27 @@
         <option value="$PROJECT_DIR$/src/PMPBundle/Resources/views/ContaPatrimonial/editar.html.twig" />
         <option value="$PROJECT_DIR$/src/PMPBundle/Resources/views/ContaPatrimonial/index.html.twig" />
         <option value="$PROJECT_DIR$/src/PMPBundle/Controller/ContaPatrimonialController.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/PMPBundle/Entity/Patrimonio.php" />
         <option value="$PROJECT_DIR$/src/PMPBundle/Entity/Imagem.php" />
         <option value="$PROJECT_DIR$/src/PMPBundle/Services/ContaPatrimonial/ContaPatrimonialBusca.php" />
         <option value="$PROJECT_DIR$/src/PMPBundle/Controller/PatrimonioController.php" />
+=======
+        <option value="$PROJECT_DIR$/src/PMPBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/web/css/bootstrap.css" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
         <option value="$PROJECT_DIR$/src/PMPBundle/Services/CentroCusto/CentroCustoBusca.php" />
+        <option value="$PROJECT_DIR$/src/PMPBundle/Services/ContaPatrimonial/ContaPatrimonialBusca.php" />
+        <option value="$PROJECT_DIR$/src/PMPBundle/Entity/Imagem.php" />
+        <option value="$PROJECT_DIR$/src/PMPBundle/Entity/Patrimonio.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/src/PMPBundle/Resources/public/js/jquery-maskedinput.js" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/PMPBundle/Resources/public/js/Patrimonio/patrimonio.js" />
+        <option value="$PROJECT_DIR$/src/PMPBundle/Services/Patrimonio/PatrimonioEdicao.php" />
+        <option value="$PROJECT_DIR$/web/app_dev.php" />
+        <option value="$PROJECT_DIR$/web/app.php" />
+        <option value="$PROJECT_DIR$/src/PMPBundle/Controller/PatrimonioController.php" />
         <option value="$PROJECT_DIR$/src/PMPBundle/Resources/views/Patrimonio/cadastrar.html.twig" />
         <option value="$PROJECT_DIR$/src/PMPBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/PMPBundle/Controller/DefaultController.php" />
@@ -185,6 +260,28 @@
   <component name="ProjectFrameBounds">
     <option name="width" value="1366" />
     <option name="height" value="728" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Invalid elementsCSS</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CssInvalidPropertyValue</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -260,6 +357,7 @@
               <option name="myItemId" value="PMPBundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -382,6 +480,8 @@
               <option name="myItemId" value="PMPBundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+=======
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
             <PATH_ELEMENT>
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -412,6 +512,7 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -442,6 +543,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="config" />
+=======
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -512,11 +621,16 @@
     <frame x="0" y="0" width="1366" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30592594" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29062957" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49133858" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -527,7 +641,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49133858" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -550,6 +663,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/PMPBundle/Entity/Estabelecimento.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7607573">
@@ -571,6 +685,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
     <entry file="file://$PROJECT_DIR$/src/PMPBundle/DependencyInjection/Configuration.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -606,6 +722,16 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Controller/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1411359">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.3184165">
@@ -669,10 +795,25 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="56" column="85" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="85" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75042444">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Controller/UsuarioController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="33" selection-end-column="5" />
+          <folding />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
         </state>
       </provider>
     </entry>
@@ -690,10 +831,18 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/PMPBundle/Services/ContaPatrimonial/ContaPatrimonialEdicao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8537005">
           <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Repository/ContaPatrimonialRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53184164">
+          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+          <folding />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
         </state>
       </provider>
     </entry>
@@ -757,6 +906,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/PMPBundle/Controller/ContaPatrimonialController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -778,34 +928,114 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="50" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Services/Cargo/CargoBusca.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.40447503">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Entity/Patrimonio.php">
+    <entry file="file://$PROJECT_DIR$/web/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4948276">
+          <caret line="1087" column="67" selection-start-line="1087" selection-start-column="67" selection-end-line="1087" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2592592">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Services/CentroCusto/CentroCustoBusca.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0">
           <caret line="180" column="39" selection-start-line="180" selection-start-column="20" selection-end-line="180" selection-end-column="39" />
+=======
+        <state vertical-scroll-proportion="-18.961538">
+          <caret line="43" column="44" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PMPBundle/Controller/PatrimonioController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.61962134">
           <caret line="59" column="30" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="30" />
+=======
+        <state vertical-scroll-proportion="-20.384615">
+          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/PMPBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.576923">
           <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Entity/CentroCusto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40963855">
+          <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Entity/Imagem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27173913">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2800659">
+          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/9b27d3c_patrimonio_1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/PMPBundle/Resources/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -817,18 +1047,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5765921">
           <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Resources/public/js/jquery-maskedinput.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="9.186161">
+          <caret line="164" column="32" selection-start-line="164" selection-start-column="32" selection-end-line="164" selection-end-column="32" />
+          <caret line="328" column="0" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Services/Patrimonio/PatrimonioEdicao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.88296044">
+          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PMPBundle/Repository/CargoRepository.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.7900172">
           <caret line="27" column="5" selection-start-line="12" selection-start-column="3" selection-end-line="27" selection-end-column="5" />
+=======
+        <state vertical-scroll-proportion="-13.076923">
+          <caret line="81" column="32" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="32" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -856,54 +1107,104 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.730769">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Entity/Patrimonio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6545455">
+          <caret line="40" column="53" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/PMPBundle/Services/Usuario/UsuarioBusca.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41480207">
           <caret line="45" column="54" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Controller/PatrimonioController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8192771">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
           <folding>
             <element signature="e#46#80#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/PMPBundle/Entity/Usuario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.3454545">
           <caret line="128" column="31" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="31" />
+=======
+    <entry file="file://$PROJECT_DIR$/web/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11703958">
+          <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/PMPBundle/Controller/UsuarioController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.3076925">
           <caret line="49" column="79" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="79" />
+=======
+    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11703958">
+          <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.62069">
           <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+=======
+    <entry file="file://$PROJECT_DIR$/web/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="25" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="25" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Services/ContaPatrimonial/ContaPatrimonialEdicao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68846816">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="46" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PMPBundle/Resources/public/js/Patrimonio/patrimonio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PMPBundle/Controller/MobileController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-7.9615383">
           <caret line="40" column="69" selection-start-line="40" selection-start-column="69" selection-end-line="40" selection-end-column="69" />
           <folding>
@@ -927,6 +1228,13 @@
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+=======
+        <state vertical-scroll-proportion="0.24637681">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding>
+            <element signature="e#3265#3285#0#HTML" expanded="true" />
+            <element signature="e#4006#4026#0#HTML" expanded="true" />
+>>>>>>> 03eec31fd62c1d7d949186903c4c0bb2da039a4d
           </folding>
         </state>
       </provider>
