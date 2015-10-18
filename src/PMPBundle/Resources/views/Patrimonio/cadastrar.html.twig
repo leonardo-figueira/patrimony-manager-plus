@@ -1,6 +1,12 @@
 {% extends '::base.html.twig' %}
 
+
 {% block body %}
+    {% block javascripts %}
+        {% javascripts '@PMPBundle/Resources/public/js/Patrimonio/patrimonio.js'%}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
     <div class="row">
         <div class="col-md-12">
             <h1 class="page-head-line">Cadastro - Conta Patrimonial</h1>
@@ -65,7 +71,7 @@
                             <label for="lblNome">Conta Patrimonial</label>
                         </div>
                         <div class="col-md-3">
-                            <select name="centro_custo" id="centro_custo" data-placeholder="Selecione"
+                            <select name="patrimonioContaPatrimonial" id="centro_custo" data-placeholder="Selecione"
                                     style="width: 100%;" class="form-control m-b">
                                 {% for key, contaPatrimonial in contaPatrimoniais %}
                                     <option value="{{ contaPatrimonial.id }}">{{ contaPatrimonial.nome }}</option>  {% endfor %}
@@ -77,11 +83,19 @@
                             <label for="lblNome">Situação</label>
                         </div>
                         <div class="col-md-3">
-                            <select name="centro_custo" id="centro_custo" data-placeholder="Selecione"
+                            <select name="patrimonioCentroCusto" id="centro_custo" data-placeholder="Selecione"
                                     style="width: 100%;" class="form-control m-b">
                                 {% for key, centroCusto in centroCustos %}
-                                    <option value="{{ centroCusto.id }}">{{ centroCusto.nocentroCusto }}-{{ centroCusto.nrcentroCusto }}</option>  {% endfor %}
+                                    <option value='{{ centroCusto.id }}'    >{{ centroCusto.nocentroCusto }}-{{ centroCusto.nrcentroCusto }}</option>  {% endfor %}
                             </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label for="lblNome">Imagem</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="file" name="patrimonioImagem">
                         </div>
                     </div>
 

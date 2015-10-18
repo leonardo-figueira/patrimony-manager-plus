@@ -40,5 +40,9 @@ class CentroCustoBusca
         return $this->repository->findAll();
     }
 
+    public function find($id){
+        return $this->repository->find($id);
+    }
+
 
 }

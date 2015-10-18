@@ -38,7 +38,7 @@ class Patrimonio
     /**
      * @var date
      *
-     * @ORM\Column(name="dtaquisicao", type="date")
+     * @ORM\Column(name="dtaquisicao", type="datetime")
      */
     private $dtaquisicao;
 
@@ -60,23 +60,21 @@ class Patrimonio
     /**
      * @var \PMPBundle\Entity\Patrimonio
      *
-     * @ORM\ManyToOne(targetEntity="\PMPBundle\Entity\CentroCusto", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="\PMPBundle\Entity\CentroCusto", cascade={"persist"},inversedBy="patrimonios")
      * @ORM\JoinColumn(name="nrcentro_custo", referencedColumnName="nrcentro_custo")
      */
     private $centroDeCusto;
     /**
      * @var \PMPBundle\Entity\Patrimonio
      *
-     * @ORM\ManyToOne(targetEntity="\PMPBundle\Entity\ContaPatrimonial", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="\PMPBundle\Entity\ContaPatrimonial", cascade={"persist"},inversedBy="patrimonios")
      * @ORM\JoinColumn(name="nrconta_patrimonial", referencedColumnName="NRCONTA_PATRIMONIAL")
      */
     private $contaPatrimonial;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Imagem", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $imagem;
+
+
+
 
 
     /**
@@ -191,21 +189,6 @@ class Patrimonio
         $this->contaPatrimonial = $contaPatrimonial;
     }
 
-    /**
-     * @return ArrayCollection
-     */
-    public function getImagem()
-    {
-        return $this->imagem;
-    }
-
-    /**
-     * @param ArrayCollection $imagem
-     */
-    public function setImagem($imagem)
-    {
-        $this->imagem = $imagem;
-    }
 
     /**
      * @return string
@@ -221,6 +204,22 @@ class Patrimonio
     public function setPlaqueta($plaqueta)
     {
         $this->plaqueta = $plaqueta;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImagem()
+    {
+        return $this->imagem;
+    }
+
+    /**
+     * @param mixed $imagem
+     */
+    public function setImagem($imagem)
+    {
+        $this->imagem = $imagem;
     }
 
 
