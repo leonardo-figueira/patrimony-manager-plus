@@ -10,4 +10,35 @@ namespace PMPBundle\Repository;
  */
 class PatrimonioRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function buscar($plaqueta, $descricao)
+    {
+        $plaquetalike = strtoupper($plaqueta);
+        $nomelike = strtoupper($descricao);
+
+        try {
+
+            $sql = $this->createQueryBuilder('p')
+                ->select('p');
+
+            if ($plaqueta != '') {
+                $sql->andWhere($sql->expr()->like('p.plaqueta', ':plaquetalike'));
+                $sql->setParameter('plaquetalike', "%{$plaquetalike}%");
+            }
+
+            if ($descricao != '') {
+                $sql->andWhere($sql->expr()->like('p.nopatrimonio', ':nomelike'));
+                $sql->setParameter('nomelike', "%{$nomelike}%");
+            }
+
+            /**$sql->andWhere('p.situacao = 4');**/
+
+            $result = $sql->getQuery()->getResult();
+
+            return $result;
+
+        } catch (\Exception $e) {
+
+            return null;
+        }
+    }
 }

@@ -61,7 +61,7 @@ class Patrimonio
      * @var \PMPBundle\Entity\Patrimonio
      *
      * @ORM\ManyToOne(targetEntity="\PMPBundle\Entity\CentroCusto", cascade={"persist"},inversedBy="patrimonios")
-     * @ORM\JoinColumn(name="nrcentro_custo", referencedColumnName="nrcentro_custo")
+     * @ORM\JoinColumn(name="idcentro_custo", referencedColumnName="idcentro_custo")
      */
     private $centroDeCusto;
     /**

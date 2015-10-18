@@ -15,7 +15,7 @@ class CentroCusto
     /**
      * @var integer
      *
-     * @ORM\Column(name="nrcentro_custo", type="integer")
+     * @ORM\Column(name="idcentro_custo", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -24,7 +24,7 @@ class CentroCusto
     /**
      * @var string
      *
-     * @ORM\Column(name="idcentro_custo", type="float")
+     * @ORM\Column(name="nrcentro_custo", type="float")
      */
     private $nrcentroCusto;
 

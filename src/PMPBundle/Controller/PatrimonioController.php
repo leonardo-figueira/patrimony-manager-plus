@@ -20,6 +20,43 @@ use Symfony\Component\Validator\Constraints\Date;
  */
 class PatrimonioController extends Controller
 {
+
+    /**
+     * @Route("/", name="patrimonio_index")
+     * @Template()
+     */
+    public function indexAction()
+    {
+        $patrimonios = null;
+
+        If($_POST) {
+
+            If ($_POST['txtPlaqueta'] !='' and $_POST['txtDescricao'] == '') {
+
+                $plaqueta = $_POST['txtPlaqueta'];
+                $descricao = '';
+                /* @var PMPService\Patrimonio\PatrimonioBusca  */
+                $service = $this->get('pmp.patrimonio_busca');
+                $patrimonios = $service->buscar($plaqueta,$descricao);
+
+            }
+
+            If ($_POST['txtPlaqueta'] == '' and $_POST['txtDescricao'] != '') {
+                $descricao = $_POST['txtDescricao'];
+                $plaqueta = '';
+                /* @var PMPService\Patrimonio\PatrimonioBusca  */
+                $service = $this->get('pmp.patrimonio_busca');
+                $patrimonios = $service->buscar($plaqueta,$descricao);
+
+            }
+
+        }
+
+        return array('patrimonios' => $patrimonios);
+    }
+
+
+
     /**
      * @Route("/novo", name="patrimonio_salvar")
      * @param Request $request

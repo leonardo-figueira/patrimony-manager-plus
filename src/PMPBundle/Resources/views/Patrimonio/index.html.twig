@@ -1,0 +1,92 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-head-line">Patrim&ocirc;nio</h1>
+        </div>
+    </div>
+
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert alert-success col-md-12">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    <a class="btn btn-success" href="{{ path('patrimonio_cadastro') }}">Adicionar novo Patrim&ocirc;nio</a>
+    </br>
+    </br>
+
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Buscar Patrim&ocirc;nio
+            </div>
+            <div class="panel-body">
+                 <form class="form-horizontal" method="post" action="{{ path('patrimonio_index') }}">
+                     <div class="form-group">
+                            <div class="col-md-1">
+                                <label for="nome">Plaqueta</label>
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" id="txtPlaqueta" name="txtPlaqueta" class="form-control">
+                            </div>
+                            <div class="col-md-1">
+                                <label for="nome">Descri&ccedil;&atilde;o</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" id="txtDescricao" name="txtDescricao" class="form-control">
+                            </div>
+                            <div class="col-md-3" style="text-align: center;">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-search"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                     </div>
+                 </form>
+            </div>
+        </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th width="10%">Plaqueta</th>
+                                <th width="40%">Descri&ccedil;&atilde;o</th>
+                                <th width="40%">Centro de Custo</th>
+                                <th width="10%"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% if patrimonios %}
+                                {% for patrimonio in patrimonios %}
+                                <tr>
+                                    <td>{{ patrimonio.plaqueta }}</td>
+                                    <td>{{ patrimonio.nopatrimonio }}</td>
+                                    <td>{{ patrimonio.centroDeCusto.nrcentroCusto }}</td>
+                                    <td>
+                                        <a class="btn btn-default" href="" title="Editar"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir o patrimonio {{ patrimonio.plaqueta }}-{{ patrimonio.nopatrimonio }}?')" href="" title="Excluir"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            {% else %}
+                                <tr>
+                                    <td colspan="4" style="text-align: center;">Insira o n&uacute;mero da plaqueta ou a descri&ccedil;&atilde;o do patrim&ocirc;nio para efetuar a busca</td>
+                                </tr>
+                            {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $("#patrimonio").addClass( "active-menu" );
+        });
+    </script>
+{% endblock %}
