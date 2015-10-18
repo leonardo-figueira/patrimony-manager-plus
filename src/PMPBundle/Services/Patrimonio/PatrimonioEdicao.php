@@ -1,6 +1,6 @@
 <?php
 
-namespace PMPBundle\Services\ContaPatrimonial;
+namespace PMPBundle\Services\Patrimonio;
 
 use PMPBundle\Entity as PMPEntity;
 use PMPBundle\Repository as PMPRepository;
@@ -40,5 +40,10 @@ class PatrimonioEdicao
         $this->em->flush();
     }
 
+    public function editar(PMPEntity\Patrimonio $patrimonio)
+    {
+        $this->em->merge($patrimonio);
+        $this->em->flush();
+    }
 
 }

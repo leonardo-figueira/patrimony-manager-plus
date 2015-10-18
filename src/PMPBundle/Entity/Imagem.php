@@ -30,6 +30,9 @@ class Imagem
      * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
     private $updateAt;
+
+
+
     /**
      * @ORM\PostLoad()
      */
@@ -37,15 +40,9 @@ class Imagem
     {
         $this->updateAt = new \DateTime();
     }
-    /**
-     * @ORM\OneToMany(targetEntity="Patrimonio", mappedBy="imagem")
-     */
-    private $patrimonios = array();
 
-    public function __construct()
-    {
-        $this->patrimonios = new ArrayCollection();
-    }
+
+
     public $file;
     public function getUploadRootDir()
     {
@@ -105,5 +102,23 @@ class Imagem
     {
         return $this->path;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getNrPatrimonio()
+    {
+        return $this->nr_patrimonio;
+    }
+
+    /**
+     * @param mixed $nr_patrimonio
+     */
+    public function setNrPatrimonio($nr_patrimonio)
+    {
+        $this->nr_patrimonio = $nr_patrimonio;
+    }
+
+
 }
 
