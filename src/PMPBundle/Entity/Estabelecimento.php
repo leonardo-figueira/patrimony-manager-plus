@@ -28,6 +28,15 @@ class Estabelecimento
      */
     private $nome;
 
+    /**
+     * @ORM\OneToMany(targetEntity="CentroCusto", mappedBy="estabelecimento")
+     */
+    private $centrosCustos = array();
+
+    public function __construct()
+    {
+        $this->centrosCustos = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -62,5 +71,14 @@ class Estabelecimento
     {
         return $this->nome;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCentrosCustos()
+    {
+        return $this->centrosCustos;
+    }
+
 }
 

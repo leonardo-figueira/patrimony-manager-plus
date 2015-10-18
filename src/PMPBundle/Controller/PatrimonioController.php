@@ -89,17 +89,18 @@ class PatrimonioController extends Controller
     }
 
     /**
-     * @Route("/editar", name="patrimonio_editar")
+     * @Route("/editar/{id}", name="patrimonio_editar")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function editarAction(Request $request)
+    public function editarAction(Request $request,PMPEntity\Patrimonio $id)
     {
         $manipulador = $this->get('pmp.patrimonio_edicao');
         $serviceCentroCusto = $this->get('pmp.centro_custo_busca');
         $serviceContaPatrimonial = $this->get('pmp.conta_patrimonial_busca');
 
-        $entity = new PMPEntity\Patrimonio();
+        $entity = $id;
+
         $entity->setContaPatrimonial($request->request->get('patrimonioContaPatrimonial'));
         $entity->setPlaqueta($request->request->get('patrimoniPlaqueta'));
         $entity->setCentroDeCusto($request->request->get('patrimonioCentroCusto'));
@@ -139,6 +140,27 @@ class PatrimonioController extends Controller
             'centroCustos' => $centroCustos,
             'contaPatrimoniais'=> $contasPatrimoniais);
         return $this->render('PMPBundle:Patrimonio:cadastrar.html.twig',$data);
+    }
+
+
+    /**
+     * @Route("/editar-patrimonio/{id}", name="patrimonio_editarPatrimonio")
+     * Template()
+     */
+    public function editarPatrimonioAction($id)
+    {
+        $service = $this->get('pmp.patrimonio_busca');
+        $entity = $service->findById($id);
+
+        $serviceCentroCusto = $this->get('pmp.centro_custo_busca');
+
+        $centroCustos = $serviceCentroCusto->findAll();
+
+        $serviceContaPatrimonial = $this->get('pmp.conta_patrimonial_busca');
+
+        $contasPatrimoniais = $serviceContaPatrimonial->findAll();
+
+        return $this->render('PMPBundle:Patrimonio:editar.html.twig',array('entity'=> $entity,'centroCustos' => $centroCustos,'contaPatrimoniais'=> $contasPatrimoniais));
     }
 
 

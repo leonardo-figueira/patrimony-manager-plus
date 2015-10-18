@@ -43,4 +43,7 @@ class PatrimonioBusca
         return $this->repository->findAll();
     }
 
+    public function findById($id) {
+        return $this->repository->findOneBy(array('id'=>$id));
+    }
 }

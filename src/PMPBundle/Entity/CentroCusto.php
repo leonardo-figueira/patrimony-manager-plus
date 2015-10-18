@@ -42,6 +42,18 @@ class CentroCusto
      **/
     private $patrimonios;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Setor", inversedBy="centrosCustos")
+     * @ORM\JoinColumn(name="NRSETOR", referencedColumnName="NRSETOR")
+     */
+    private $setor;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Estabelecimento", inversedBy="centrosCustos")
+     * @ORM\JoinColumn(name="NRESTABELECIMENTO", referencedColumnName="NRESTABELECIMENTO")
+     */
+    private $estabelecimento;
+
 
     /**
      * Get id
@@ -101,6 +113,37 @@ class CentroCusto
         $this->nrcentroCusto = $nrcentroCusto;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getSetor()
+    {
+        return $this->setor;
+    }
+
+    /**
+     * @param mixed $setor
+     */
+    public function setSetor($setor)
+    {
+        $this->setor = $setor;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEstabelecimento()
+    {
+        return $this->estabelecimento;
+    }
+
+    /**
+     * @param mixed $estabelecimento
+     */
+    public function setEstabelecimento($estabelecimento)
+    {
+        $this->estabelecimento = $estabelecimento;
+    }
 
 }
 

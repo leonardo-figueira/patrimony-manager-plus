@@ -2,6 +2,7 @@
 
 namespace PMPBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -28,6 +29,15 @@ class Setor
      */
     private $nome;
 
+    /**
+     * @ORM\OneToMany(targetEntity="CentroCusto", mappedBy="setor")
+     */
+    private $centrosCustos = array();
+
+    public function __construct()
+    {
+        $this->centrosCustos = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -62,5 +72,14 @@ class Setor
     {
         return $this->nome;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCentrosCustos()
+    {
+        return $this->centrosCustos;
+    }
+
 }
 
