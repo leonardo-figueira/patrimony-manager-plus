@@ -145,5 +145,14 @@ class CentroCusto
         $this->estabelecimento = $estabelecimento;
     }
 
+    public function toArray()
+    {
+        return array(
+            'codigo' => $this->id,
+            'cdCusto' => $this->nrcentroCusto,
+            'nome'   => $this->nocentroCusto
+        );
+    }
+
 }
 

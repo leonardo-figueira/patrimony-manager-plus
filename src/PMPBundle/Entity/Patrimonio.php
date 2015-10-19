@@ -222,8 +222,11 @@ class Patrimonio
         $this->imagem = $imagem;
     }
 
-
-
-
+    public function toArray(){
+        return array(
+            'numero' => $this->id,
+            'descricao'   => $this->nopatrimonio
+        );
+    }
 }
 
