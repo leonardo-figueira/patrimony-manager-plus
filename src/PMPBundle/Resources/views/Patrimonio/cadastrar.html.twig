@@ -10,7 +10,7 @@
     {% endblock %}
     <div class="row">
         <div class="col-md-12">
-            <h1 class="page-head-line">Cadastro - Conta Patrimonial</h1>
+            <h1 class="page-head-line">Cadastro - Patrim&ocirc;nio</h1>
         </div>
     </div>
 
@@ -54,7 +54,11 @@
                             <label for="lblNome">Situação</label>
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="patrimonioSituacao" name="patrimonioSituacao" class="form-control">
+                            <select name="patrimonioSituacao" id="patrimonioSituacao" data-placeholder="Selecione" style="width: 100%;" class="form-control m-b">
+                                <option value="1">Dispon&iacute;vel</option>
+                                <option value="2">Alocado</option>
+                                <option value="3">Conserto</option>
+                            </select>
                         </div>
                     </div>
 
@@ -81,7 +85,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-2">
-                            <label for="lblNome">Situação</label>
+                            <label for="lblNome">Centro de Custo</label>
                         </div>
                         <div class="col-md-3">
                             <select name="patrimonioCentroCusto" id="patrimonioCentroCusto" data-placeholder="Selecione"
@@ -105,7 +109,7 @@
                         <div class="col-md-4">
                             <button class="btn btn-labeled btn-info" type="submit" name="salvar" id="btnSalvar" onclick="return validarFormulario()">Salvar
                             </button>
-                            <a class="btn btn-default" href="{{ path('usuario_index') }}">Cancelar</a>
+                            <a class="btn btn-default" href="{{ path('patrimonio_index') }}">Cancelar</a>
                         </div>
                     </div>
                 </form>

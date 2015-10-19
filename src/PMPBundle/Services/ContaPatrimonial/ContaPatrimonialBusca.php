@@ -44,7 +44,7 @@ class ContaPatrimonialBusca
     }
 
     public function findAll() {
-        return $this->repository->findAll();
+        return $this->repository->findBy(array('status'=>1));
     }
 
     public function find($id) {

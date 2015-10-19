@@ -30,6 +30,8 @@ class PatrimonioRepository extends \Doctrine\ORM\EntityRepository
                 $sql->setParameter('nomelike', "%{$nomelike}%");
             }
 
+            $sql->andWhere('p.situacao != 4');
+
             /**$sql->andWhere('p.situacao = 4');**/
 
             $result = $sql->getQuery()->getResult();

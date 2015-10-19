@@ -31,7 +31,6 @@ class ContaPatrimonialController extends Controller
         If($_POST) {
 
 
-
             If ($_POST['txtId'] !='' and $_POST['txtNome'] == '') {
 
                 $id = $_POST['txtId'];
@@ -67,8 +66,11 @@ class ContaPatrimonialController extends Controller
 
         $entity = new PMPEntity\ContaPatrimonial();
         $entity->setNome($request->request->get('contaPatrimonialNome'));
+        $entity->setStatus('1');
 
         $manipulador->salvar($entity);
+
+        $this->addFlash('success', 'Conta Patrimonial '. $request->request->get('contaPatrimonialNome') .' Cadastrada Com sucesso');
 
         return $this->redirectToRoute('contaPatrimonial_index');
     }
@@ -83,13 +85,15 @@ class ContaPatrimonialController extends Controller
     {
 
         $service = $this->get('pmp.conta_patrimonial_busca');
-        $entity = $service->findConta($request->request->get('contaPatrimonialId'));
+        $entity = $service->find($request->request->get('contaPatrimonialId'));
 
         $manipulador = $this->get('pmp.conta_patrimonial_edicao');
 
         $entity->setNome($request->request->get('contaPatrimonialNome'));
 
         $manipulador->editar($entity);
+
+        $this->addFlash('success', 'Conta Patrimonial Editada Com sucesso');
 
         return $this->redirectToRoute('contaPatrimonial_index');
     }
@@ -110,7 +114,7 @@ class ContaPatrimonialController extends Controller
     public function editarContaPatrimonialAction($id)
     {
         $service = $this->get('pmp.conta_patrimonial_busca');
-        $entity = $service->findConta($id);
+        $entity = $service->find($id);
 
         return $this->render('PMPBundle:ContaPatrimonial:editar.html.twig',array('entity'=> $entity));
     }
