@@ -43,4 +43,16 @@ class PatrimonioRepository extends \Doctrine\ORM\EntityRepository
             return null;
         }
     }
+
+    public function patrimonioPorSituacao()
+    {
+        $sql = $this->createQueryBuilder('p')
+            ->select('p.situacao,count(p.id) as count')
+            ->from('PMPBundle:Patrimonio','p');
+
+        $result = $sql->getQuery()->getResult();
+
+        return $result;
+    }
+
 }

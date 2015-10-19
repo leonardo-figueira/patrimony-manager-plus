@@ -67,7 +67,6 @@ class WSPatrimonioController extends Controller
 
     /**
      * @Route("/gravar-patrimonio")
-     * @Method({"POST"})
      */
     public function gravarPatrimonioAction(Request $request)
     {

@@ -51,4 +51,9 @@ class PatrimonioBusca
         return $this->repository->findBy(array('centroDeCusto' => $id));
 
     }
+
+    public function patrimonioPorSituacao(){
+        return $this->repository->patrimonioPorSituacao();
+
+    }
 }

@@ -73,7 +73,7 @@ class PatrimonioController extends Controller
         $entity->setPlaqueta($request->request->get('patrimoniPlaqueta'));
         $entity->setCentroDeCusto($request->request->get('patrimonioCentroCusto'));
 
-        $var = explode("-",$request->request->get('patrimonioDtAquisicao'));
+        $var = explode("/",$request->request->get('patrimonioDtAquisicao'));
         $data = $var[2].'-'.$var[1].'-'.$var[0];
         $data = date_create_from_format('Y-m-d',$data);
         $entity->setDtaquisicao($data);
@@ -84,8 +84,9 @@ class PatrimonioController extends Controller
         $entity->setContaPatrimonial($serviceContaPatrimonial->find($request->request->get('patrimonioContaPatrimonial')));
         $manipulador->salvar($entity);
 
+        $this->addFlash('success', 'Patrimonio '. $request->request->get('patrimonioDescicao') .' Cadastrado Com sucesso');
 
-        return $this->redirectToRoute('patrimonio_cadastro');
+        return $this->redirectToRoute('patrimonio_index');
     }
 
     /**
@@ -105,7 +106,7 @@ class PatrimonioController extends Controller
         $entity->setPlaqueta($request->request->get('patrimoniPlaqueta'));
         $entity->setCentroDeCusto($request->request->get('patrimonioCentroCusto'));
 
-        $var = explode("-",$request->request->get('patrimonioDtAquisicao'));
+        $var = explode("/",$request->request->get('patrimonioDtAquisicao'));
         $data = $var[2].'-'.$var[1].'-'.$var[0];
         $data = date_create_from_format('Y-m-d',$data);
         $entity->setDtaquisicao($data);
@@ -119,7 +120,7 @@ class PatrimonioController extends Controller
         $manipulador->editar($entity);
 
 
-        return $this->redirectToRoute('patrimonio_cadastro');
+        return $this->redirectToRoute('patrimonio_index');
     }
 
     /**
