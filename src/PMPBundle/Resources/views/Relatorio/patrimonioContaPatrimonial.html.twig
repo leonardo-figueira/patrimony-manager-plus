@@ -1,0 +1,35 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-10">
+            <h1 class="page-head-line">Relat&oacute;rio - Patrim&ocirc;nios por Conta Patrimonial</h1>
+        </div>
+        <div class="col-md-2" style="text-align: right;">
+            <a class="btn btn-success" href="">Exportar Excel</a>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+                    <table class="table table-striped" style="font-family: 'Courier New';">
+                        <thead>
+                            <th>Centro de Custo</th>
+                            <th style="text-align: right;">Quantidade</th>
+                        </thead>
+                        <tbody>
+                            {% for resultado in resultados %}
+                            <tr>
+                                <td>[ {{ resultado.id }} ] {{ resultado.nome }}</td>
+                                <td style="text-align: right;">{{ resultado.quant }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+    </div>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $("#relatorio").addClass( "active-menu" );
+            $("#relatorio-cont-pat").addClass( "active-menu" );
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-10">
+            <h1 class="page-head-line">Relat&oacute;rio - Patrim&ocirc;nios por Situa&ccedil;&atilde;o</h1>
+        </div>
+        <div class="col-md-2" style="text-align: right;">
+            <a class="btn btn-success" href="">Exportar Excel</a>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Buscar Por Centro de Custo
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" method="post" action="">
+                                <div class="form-group">
+                                    <div class="col-md-5">
+                                        <select name="centroCusto" id="centroCusto" data-placeholder="Selecione"
+                                                style="width: 100%;" class="form-control m-b">
+                                            <option value="">Selecione o Centro de Custo</option>
+                                            {% for key, centroCusto in centroCustos %}
+                                                <option value='{{ centroCusto.id }}'> {{ centroCusto.nrcentroCusto }} - {{ centroCusto.nocentroCusto }}</option>  {% endfor %}
+                                        </select>
+                                        <input type="hidden" name="test_text" id="text_content" value="" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa fa-search"></i>
+                                            Filtrar
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <table class="table table-striped" style="font-family: 'Courier New';">
+                        <thead>
+                            <th>Situa&ccedil;&atilde;o</th>
+                            <th style="text-align: right;">Quantidade</th>
+                        </thead>
+                        <tbody>
+                            {% for resultado in resultados %}
+                            <tr>
+                                <td>
+                                    {% if resultado.situacao == 1 %}
+                                        Patrim&ocirc;nios Dispon&iacute;veis
+                                    {% elseif resultado.situacao == 2 %}
+                                        Patrim&ocirc;nios Alocados
+                                    {% elseif resultado.situacao == 3 %}
+                                        Patrim&ocirc;nios em Conserto
+                                    {% elseif resultado.situacao == 4 %}
+                                        Patrim&ocirc;nios Inativos
+                                    {% endif %}
+                                </td>
+                                <td style="text-align: right;">{{ resultado.quant }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+    </div>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $("#relatorio").addClass( "active-menu" );
+            $("#relatorio-situacao").addClass( "active-menu" );
+        });
+    </script>
+{% endblock %}

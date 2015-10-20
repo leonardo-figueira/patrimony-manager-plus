@@ -52,8 +52,13 @@ class PatrimonioBusca
 
     }
 
-    public function patrimonioPorSituacao(){
-        return $this->repository->patrimonioPorSituacao();
+    public function patrimonioPorSituacao($centroCusto){
+        return $this->repository->patrimonioPorSituacao($centroCusto);
+
+    }
+
+    public function patrimonioContaPatrimonial(){
+        return $this->repository->patrimonioContaPatrimonial();
 
     }
 }

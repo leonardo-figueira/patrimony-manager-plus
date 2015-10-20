@@ -44,11 +44,29 @@ class PatrimonioRepository extends \Doctrine\ORM\EntityRepository
         }
     }
 
-    public function patrimonioPorSituacao()
+    public function patrimonioPorSituacao($centroCusto)
     {
         $sql = $this->createQueryBuilder('p')
-            ->select('p.situacao,count(p.id) as count')
-            ->from('PMPBundle:Patrimonio','p');
+            ->select('p.situacao as situacao,count(p.id) as quant');
+
+            if($centroCusto != ''){
+                $sql->andWhere('p.centroDeCusto = :centroCusto');
+                $sql->setParameter('centroCusto',$centroCusto);
+            }
+
+        $sql->groupBy('p.situacao');
+
+        $result = $sql->getQuery()->getResult();
+
+        return $result;
+    }
+
+    public function patrimonioContaPatrimonial()
+    {
+        $sql = $this->createQueryBuilder('p')
+            ->select('cp.id as id, cp.nome as nome,count(p.id) as quant')
+            ->join('p.contaPatrimonial', 'cp')
+            ->groupBy('cp.id');
 
         $result = $sql->getQuery()->getResult();
 

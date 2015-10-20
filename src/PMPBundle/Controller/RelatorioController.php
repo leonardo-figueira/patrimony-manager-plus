@@ -21,43 +21,40 @@ use Symfony\Component\HttpFoundation\Request;
 class RelatorioController extends Controller
 {
     /**
-     * @Route("/patrimonio-situacao", name="relatorioQuantitativoContaPatrimonial")
+     * @Route("/patrimonio-situacao", name="patrimonio_por_situacao")
      * @Template()
      */
     public function patrimonioPorSituacaoAction()
     {
+        $cc = '';
+
+        if($_POST){
+            if($_POST['centroCusto']){
+                $cc = $_POST['centroCusto'];
+            }
+        }
+
+        $serviceCentroCusto = $this->get('pmp.centro_custo_busca');
+        $centroCustos = $serviceCentroCusto->findAll();
 
         $servicePatrimonio = $this->get('pmp.patrimonio_busca');
-        $servicePatrimonio->patrimonioPorSituacao();
+        $result = $servicePatrimonio->patrimonioPorSituacao($cc);
 
-        var_dump($servicePatrimonio);
-        exit;
-
-        return array('contasPatrimoniais' => $contasPatrimoniais);
+        return array('resultados' => $result, 'centroCustos' => $centroCustos);
     }
 
     /**
-     * @Route("/salvar", name="contaPatrimonial_salvar")
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route("/patrimonio-conta-patrimonial", name="patrimonio_conta_patrimonial")
+     * @Template()
      */
-    public function salvarAction(Request $request)
+    public function patrimonioContaPatrimonialAction()
     {
 
-        return $this->redirectToRoute('contaPatrimonial_index');
+        $servicePatrimonio = $this->get('pmp.patrimonio_busca');
+        $result = $servicePatrimonio->patrimonioContaPatrimonial();
+
+        return array('resultados' => $result);
     }
 
-
-    /**
-     * @Route("/editar", name="contaPatrimonial_editar")
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
-    public function editarAction(Request $request)
-    {
-
-
-        return $this->redirectToRoute('contaPatrimonial_index');
-    }
 
 }
