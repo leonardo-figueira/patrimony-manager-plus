@@ -14,6 +14,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Acl\Exception\Exception;
 
 /**
  * @Route("/mobile")
@@ -26,20 +27,22 @@ class MobileController extends Controller implements ContainerAwareInterface
      */
     public function indexAction(){
 
-
-
         if($_GET) {
-            $serviceUsuario = $this->get('pmp.usuario_busca');
-            $usuario = $serviceUsuario->buscarPorNome($_GET['_username']);
+                $serviceUsuario = $this->get('pmp.usuario_busca');
+                $usuario = $serviceUsuario->buscarPorNome($_GET['_username']);
 
-            $senhaEstocada = $usuario->getPassword();
-            $senhaFormulario = $this->encodePassword($usuario, $_GET['_password']);
+                if(is_null($usuario)){
+                    return new Response(json_encode(array('log' => 'deuruim')));
+                    exit;
+                }
+                    $senhaEstocada = $usuario->getPassword();
+                    $senhaFormulario = $this->encodePassword($usuario, $_GET['_password']);
 
-            if($senhaFormulario==$senhaEstocada){
-                return new Response(json_encode(array('log'=>'borala')));
-            }else{
-                return new Response(json_encode(array('log'=>'deuruim')));
-            }
+                    if ($senhaFormulario == $senhaEstocada) {
+                        return new Response(json_encode(array('log' => 'borala')));
+                    } else {
+                        return new Response(json_encode(array('log' => 'deuruim')));
+                    }
 
         }
         return array('teste'=>'teste');
@@ -55,6 +58,15 @@ class MobileController extends Controller implements ContainerAwareInterface
             ->getEncoder($user);
 
         return $encoder->encodePassword($plainPassword, $user->getSalt());
+    }
+
+    /**
+     * @Route("/cadastro-patrimonio-ws", name="cadastro-patrimonio-ws")
+     * @Template()
+     */
+    public function cadastro_patrimonioAction(){
+
+        return array('teste'=>'teste');
     }
 
 }

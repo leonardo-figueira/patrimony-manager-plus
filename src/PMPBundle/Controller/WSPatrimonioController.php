@@ -15,6 +15,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 /**
  * @Route("/ws-patrimonio")
@@ -66,64 +67,72 @@ class WSPatrimonioController extends Controller
 
 
     /**
-     * @Route("/gravar-patrimonio")
+     * @Route("/gravar-patrimonio",name="gravaPatrimonioMobile")
+     * @Method({"GET", "POST"})
      */
     public function gravarPatrimonioAction(Request $request)
     {
 
         $aResposta = array();
 
-        try {
+                try {
 
-            $manipulador             = $this->get('pmp.patrimonio_edicao');
-            $serviceCentroCusto      = $this->get('pmp.centro_custo_busca');
-            $serviceContaPatrimonial = $this->get('pmp.conta_patrimonial_busca');
+                    $manipulador             = $this->get('pmp.patrimonio_edicao');
+                    //$serviceCentroCusto      = $this->get('pmp.centro_custo_busca');
+                    //$serviceContaPatrimonial = $this->get('pmp.conta_patrimonial_busca');
 
-            $entity = new PMPEntity\Patrimonio();
-            $entity->setContaPatrimonial($request->request->get('patrimonioContaPatrimonial'));
-            $entity->setPlaqueta($request->request->get('patrimoniPlaqueta'));
-            $entity->setCentroDeCusto($request->request->get('patrimonioCentroCusto'));
+                    $cc = 1;
+                    $cp = 4;
 
-            $var = explode("/",$request->request->get('patrimonioDtAquisicao'));
-            $data = $var[2].'-'.$var[1].'-'.$var[0];
-            $data = date_create_from_format('Y-m-d',$data);
-            $entity->setDtaquisicao($data);
-            $entity->setNopatrimonio($request->request->get('patrimonioDescicao'));
-            $entity->setSituacao($request->request->get('patrimonioSituacao'));
-            $entity->setNrnotafiscal((int)$request->request->get('patrimonioNotaFiscal'));
-            $entity->setCentroDeCusto($serviceCentroCusto->find($request->request->get('patrimonioCentroCusto')));
-            $entity->setContaPatrimonial($serviceContaPatrimonial->find($request->request->get('patrimonioContaPatrimonial')));
-            $manipulador->salvar($entity);
+                    $centroCusto      = $this->getDoctrine()->getRepository("PMPBundle:CentroCusto")->find($cc);
+                    $contaPatrimonial = $this->getDoctrine()->getRepository("PMPBundle:ContaPatrimonial")->find($cp);
+                    $num = 1;
 
-            $stateCode = 200;
-            $aResposta = array("message" => "OK");
+                    $entity = new PMPEntity\Patrimonio();
+                    $entity->setPlaqueta($request->request->get('cod'));
+                    //$var = explode("/",$request->request->get('dta'));
+                    /*
+                    $data = $var[2].'-'.$var[1].'-'.$var[0];
+                    $data = date_create_from_format('Y-m-d',$data);
 
+                    */
+                     $data = "2015-07-10";
+                     $data = date_create_from_format('Y-m-d',$data);
+                     $entity->setDtaquisicao($data);
+                     $entity->setNopatrimonio($request->request->get('desc'));
+                     $entity->setSituacao($num);
+                     $entity->setNrnotafiscal((int)$request->request->get('nf'));
+                     $entity->setCentroDeCusto($centroCusto);
+                     $entity->setContaPatrimonial($contaPatrimonial);
 
-        } catch (\ErrorException $e) {
-
-            $stateCode = $e->getCode();
-            $aResposta = array("message" => $e->getMessage());
-
-
-        } catch (\Exception $e) {
-
-            $stateCode = 500;
-            $aResposta = array("message" => $e->getMessage());
-        }
+                    $manipulador->salvar($entity);
 
 
-        $response = new JsonResponse($aResposta, $stateCode,
-            array(
-                'Access-Control-Allow-Origin'  => '*',
-                'Access-Control-Allow-Headers' => '*',
-                'Access-Control-Allow-Methods' => '*',
-                'Access-Control-Allow-Credentials' => 'true',
-                'Content-Type' => '*'
-                //'Content-Type' => 'application/json'
-            )
-        );
 
-        return $response;
+                    $stateCode = 200;
+                    $aResposta = array("message" => "OK");
 
-    }
+
+                } catch (\ErrorException $e) {
+
+                    $stateCode = $e->getCode();
+                    $aResposta = array("message" => $e->getMessage());
+
+
+                }
+
+                $response = new JsonResponse($aResposta, $stateCode,
+                    array(
+                        'Access-Control-Allow-Origin'  => '*',
+                        'Access-Control-Allow-Headers' => '*',
+                        'Access-Control-Allow-Methods' => '*',
+                        'Access-Control-Allow-Credentials' => 'true',
+                        'Content-Type' => '*'
+                        //'Content-Type' => 'application/json'
+                    )
+                );
+
+                return $response;
+
+            }
 }

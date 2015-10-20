@@ -148,9 +148,9 @@ class CentroCusto
     public function toArray()
     {
         return array(
-            'codigo' => $this->id,
-            'cdCusto' => $this->nrcentroCusto,
-            'nome'   => $this->nocentroCusto
+            'id' => $this->id,
+            'centrocusto' => $this->nrcentroCusto,
+            'setor'   => $this->nocentroCusto
         );
     }
 
