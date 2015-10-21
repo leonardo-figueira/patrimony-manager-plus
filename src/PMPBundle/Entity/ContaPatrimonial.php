@@ -108,7 +108,13 @@ class ContaPatrimonial
         $this->status = $status;
     }
 
-
+    public function toArray()
+    {
+        return array(
+            'id' => $this->id,
+            'contapatrimonial' => $this->nome,
+        );
+    }
 
 }
 

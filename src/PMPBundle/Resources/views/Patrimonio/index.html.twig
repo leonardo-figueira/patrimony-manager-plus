@@ -74,7 +74,7 @@
                                     </td>
                                     <td>
                                         <a class="btn btn-default" href="{{ path('patrimonio_editarPatrimonio',{'id':patrimonio.id}) }}" title="Editar"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir o patrimonio {{ patrimonio.plaqueta }}-{{ patrimonio.nopatrimonio }}?')" href="" title="Excluir"><i class="fa fa-trash"></i></a>
+                                        <a class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir o patrimonio {{ patrimonio.plaqueta }}-{{ patrimonio.nopatrimonio }}?')" href="{{ path('patrimonio_excluir',{'id':patrimonio.id}) }}" title="Excluir"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 {% endfor %}

@@ -165,6 +165,26 @@ class PatrimonioController extends Controller
     }
 
 
+    /**
+     * @Route("/excluir/{id}", name="patrimonio_excluir")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function excluirAction(Request $request,PMPEntity\Patrimonio $id)
+    {
+        $manipulador = $this->get('pmp.patrimonio_edicao');
+        $service = $this->get('pmp.patrimonio_busca');
+        $entity = $service->findById($id);
+
+        $situacao = 4;
+        $entity->setSituacao($situacao);
+
+
+        $manipulador->editar($entity);
+
+        return $this->redirectToRoute('patrimonio_index');
+    }
+
 
 
 }

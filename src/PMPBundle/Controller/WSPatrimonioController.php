@@ -45,6 +45,28 @@ class WSPatrimonioController extends Controller
     }
 
     /**
+     * @Route("/lista-conta-patrimonial", name="wslistarContaPatrimonial")
+     * @Template()
+     */
+    public function listarContaPatrimonialoAction()
+    {
+        $serviceContaPatrimonial = $this->get('pmp.conta_patrimonial_busca');
+        $contasPatrimoniais = $serviceContaPatrimonial->findAll();
+        $contasPatrimoniaisArray = array();
+
+        foreach ($contasPatrimoniais as $contaPatrimoal) {
+            $contasPatrimoniaisArray[] = $contaPatrimoal->toArray();
+        }
+
+        $response = new JsonResponse($contasPatrimoniaisArray, 200, array(
+            'Access-Control-Allow-Origin' => '*',
+            'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept',
+            'Content-Type' => 'application/json'));
+
+        return $response;
+    }
+
+    /**
      * @Route("/listar-patrimonios/{id}")
      */
     public function listarPatrimonioCentroCustoAction($id)
@@ -78,20 +100,18 @@ class WSPatrimonioController extends Controller
         try {
 
             $manipulador = $this->get('pmp.patrimonio_edicao');
-            $serviceCentroCusto      = $this->get('pmp.centro_custo_busca');
+            $serviceCentroCusto = $this->get('pmp.centro_custo_busca');
             //$serviceContaPatrimonial = $this->get('pmp.conta_patrimonial_busca');
 
             $centroCustoPatrimonio = $serviceCentroCusto->find($centrocusto);
             $contaPatrimonialPatrimonio = $this->getDoctrine()->getRepository("PMPBundle:ContaPatrimonial")->find($contapatrimonial);
 
 
-
-
             $entity = new PMPEntity\Patrimonio();
             $entity->setPlaqueta($patrimonio);
             $var = explode("-", $dtaquisicao);
 
-            $data = $var[2].'-'.$var[1].'-'.$var[0];
+            $data = $var[2] . '-' . $var[1] . '-' . $var[0];
             $data = date_create_from_format('Y-m-d', $data);
             $entity->setDtaquisicao($data);
             $entity->setNopatrimonio($descricao);
@@ -127,5 +147,45 @@ class WSPatrimonioController extends Controller
 
         return $response;
 
+    }
+
+
+    /**
+     * @Route("/excluirPatrimonio/{id}")
+     */
+    public function excluirPatrimonio(PMPEntity\Patrimonio $id)
+    {
+        try {
+
+            $manipulador = $this->get('pmp.patrimonio_edicao');
+            $service = $this->get('pmp.patrimonio_busca');
+            $entity = $service->findById($id);
+
+            $situacao = 4;
+            $entity->setSituacao($situacao);
+
+
+            $manipulador->editar($entity);
+
+            $stateCode = 200;
+            $aResposta = array("message" => "OK");
+        } catch (\ErrorException $e) {
+
+            $stateCode = $e->getCode();
+            $aResposta = array("message" => $e->getMessage());
+        }
+
+        $response = new JsonResponse($aResposta, $stateCode,
+            array(
+                'Access-Control-Allow-Origin' => '*',
+                'Access-Control-Allow-Headers' => '*',
+                'Access-Control-Allow-Methods' => '*',
+                'Access-Control-Allow-Credentials' => 'true',
+                'Content-Type' => '*'
+                //'Content-Type' => 'application/json'
+            )
+        );
+
+        return $response;
     }
 }
