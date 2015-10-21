@@ -73,4 +73,17 @@ class PatrimonioRepository extends \Doctrine\ORM\EntityRepository
         return $result;
     }
 
+
+    public function patrimonioPorCentroCusto()
+    {
+        $sql = $this->createQueryBuilder('p')
+            ->select('cp.id as id, cp.nome as nome,count(p.id) as quant')
+            ->join('p.contaPatrimonial', 'cp')
+            ->groupBy('cp.id');
+
+        $result = $sql->getQuery()->getResult();
+
+        return $result;
+    }
+
 }

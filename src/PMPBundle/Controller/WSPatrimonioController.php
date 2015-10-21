@@ -99,20 +99,22 @@ class WSPatrimonioController extends Controller
 
         try {
 
+            $cc = explode(':',$centrocusto);
+            $cp = explode(':',$contapatrimonial);
+
             $manipulador = $this->get('pmp.patrimonio_edicao');
             $serviceCentroCusto = $this->get('pmp.centro_custo_busca');
             //$serviceContaPatrimonial = $this->get('pmp.conta_patrimonial_busca');
 
-            $centroCustoPatrimonio = $serviceCentroCusto->find($centrocusto);
-            $contaPatrimonialPatrimonio = $this->getDoctrine()->getRepository("PMPBundle:ContaPatrimonial")->find($contapatrimonial);
+            $centroCustoPatrimonio = $serviceCentroCusto->find($cc[1]);
+            $contaPatrimonialPatrimonio = $this->getDoctrine()->getRepository("PMPBundle:ContaPatrimonial")->find($cp[1]);
 
 
             $entity = new PMPEntity\Patrimonio();
             $entity->setPlaqueta($patrimonio);
-            $var = explode("-", $dtaquisicao);
 
-            $data = $var[2] . '-' . $var[1] . '-' . $var[0];
-            $data = date_create_from_format('Y-m-d', $data);
+
+            $data = date_create_from_format('Y-m-d', $dtaquisicao);
             $entity->setDtaquisicao($data);
             $entity->setNopatrimonio($descricao);
             $entity->setSituacao(1);
