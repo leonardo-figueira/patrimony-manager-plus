@@ -86,4 +86,18 @@ class PatrimonioRepository extends \Doctrine\ORM\EntityRepository
         return $result;
     }
 
+    public function listarPatrimonioCentroCusto($centroCusto)
+    {
+        $sql = $this->createQueryBuilder('p')
+            ->select('p')
+            ->where('p.situacao != 4');
+            $sql->andWhere('p.centroDeCusto = :centroCusto');
+            $sql->setParameter('centroCusto',$centroCusto);
+
+
+        $result = $sql->getQuery()->getResult();
+
+        return $result;
+    }
+
 }
