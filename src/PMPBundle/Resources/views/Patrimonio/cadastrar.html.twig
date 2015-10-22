@@ -32,18 +32,18 @@
 
                     <div class="form-group">
                         <div class="col-md-2">
-                            <label for="lblNome">Descricao</label>
+                            <label for="lblNome">Descri&ccedil;&atilde;o</label>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-5">
                             <input type="text" id="patrimonioDescicao" name="patrimonioDescicao" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-2">
-                            <label for="lblNome">Data Aquisição</label>
+                            <label for="lblNome">Data Aquisi&ccedil;&atilde;o</label>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <input type="text" id="patrimonioDtAquisicao" name="patrimonioDtAquisicao"
                                    class="form-control">
                         </div>
@@ -51,9 +51,9 @@
 
                     <div class="form-group">
                         <div class="col-md-2">
-                            <label for="lblNome">Situação</label>
+                            <label for="lblNome">Situa&ccedil;&atilde;o</label>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <select name="patrimonioSituacao" id="patrimonioSituacao" data-placeholder="Selecione" style="width: 100%;" class="form-control m-b">
                                 <option value="1">Dispon&iacute;vel</option>
                                 <option value="2">Alocado</option>
@@ -64,7 +64,7 @@
 
                     <div class="form-group">
                         <div class="col-md-2">
-                            <label for="lblNome">Nota Fiscal(nº)</label>
+                            <label for="lblNome">Nota Fiscal (n&#186;)</label>
                         </div>
                         <div class="col-md-3">
                             <input type="text" id="patrimonioNotaFiscal" name="patrimonioNotaFiscal"
@@ -75,7 +75,7 @@
                         <div class="col-md-2">
                             <label for="lblNome">Conta Patrimonial</label>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <select name="patrimonioContaPatrimonial" id="patrimonioContaPatrimonial" data-placeholder="Selecione"
                                     style="width: 100%;" class="form-control m-b">
                                 {% for key, contaPatrimonial in contaPatrimoniais %}
@@ -87,7 +87,7 @@
                         <div class="col-md-2">
                             <label for="lblNome">Centro de Custo</label>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-5">
                             <select name="patrimonioCentroCusto" id="patrimonioCentroCusto" data-placeholder="Selecione"
                                     style="width: 100%;" class="form-control m-b">
                                 {% for key, centroCusto in centroCustos %}
@@ -95,15 +95,6 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-2">
-                            <label for="lblNome">Imagem</label>
-                        </div>
-                        <div class="col-md-3">
-                            <input type="file" name="patrimonioImagem">
-                        </div>
-                    </div>
-
 
                     <div class="row">
                         <div class="col-md-4">

@@ -119,6 +119,7 @@ class PatrimonioController extends Controller
 
         $manipulador->editar($entity);
 
+        $this->addFlash('success', 'Patrimonio '. $request->request->get('patrimonioDescicao') .' Editado Com sucesso');
 
         return $this->redirectToRoute('patrimonio_index');
     }
@@ -181,6 +182,8 @@ class PatrimonioController extends Controller
 
 
         $manipulador->editar($entity);
+
+        $this->addFlash('success', 'Patrimonio Excluido Com sucesso');
 
         return $this->redirectToRoute('patrimonio_index');
     }

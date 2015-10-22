@@ -41,6 +41,10 @@ class UsuarioController extends Controller implements ContainerAwareInterface
 
         $serviceCargo = $this->get('pmp.cargo_busca');
 
+        $serviceCentroCusto = $this->get('pmp.centro_custo_busca');
+
+        $centroCustos = $serviceCentroCusto->findAll();
+
         if($_POST){
 
             $usuario = new Usuario();
@@ -67,7 +71,7 @@ class UsuarioController extends Controller implements ContainerAwareInterface
 
         $cargos = $serviceCargo->buscarTodos();
 
-        return array('cargos'=>$cargos);
+        return array('cargos'=>$cargos,'centroCustos' =>$centroCustos);
 
     }
 
@@ -106,6 +110,10 @@ class UsuarioController extends Controller implements ContainerAwareInterface
      */
     public function editarAction(Usuario $usuario){
 
+        $serviceCentroCusto = $this->get('pmp.centro_custo_busca');
+
+        $centroCustos = $serviceCentroCusto->findAll();
+
         if($_POST){
 
             $usuario->setNome($_POST['txtNome']);
@@ -130,7 +138,7 @@ class UsuarioController extends Controller implements ContainerAwareInterface
 
         }
 
-        return array('usuario' => $usuario);
+        return array('usuario' => $usuario, 'centroCustos' =>$centroCustos);
     }
 
 }

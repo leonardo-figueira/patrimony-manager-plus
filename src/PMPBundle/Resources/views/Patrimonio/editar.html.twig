@@ -30,7 +30,7 @@
 
                     <div class="form-group">
                         <div class="col-md-2">
-                            <label for="lblNome">Descricao</label>
+                            <label for="lblNome">Descri&ccedil;&atilde;o</label>
                         </div>
                         <div class="col-md-3">
                             <input type="text" id="patrimonioDescicao" name="patrimonioDescicao" class="form-control" value="{{ entity.nopatrimonio }}">
@@ -39,16 +39,16 @@
 
                     <div class="form-group">
                         <div class="col-md-2">
-                            <label for="lblNome">Data Aquisição</label>
+                            <label for="lblNome">Data Aquisi&ccedil;&atilde;o</label>
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="patrimonioDtAquisicao" name="patrimonioDtAquisicao" class="form-control" value="{{ entity.dtaquisicao|date('d-m-Y') }}">
+                            <input type="text" id="patrimonioDtAquisicao" name="patrimonioDtAquisicao" class="form-control" value="{{ entity.dtaquisicao|date('d/m/Y') }}">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-2">
-                            <label for="lblNome">Situação</label>
+                            <label for="lblNome">Situa&ccedil;&atilde;o</label>
                         </div>
                         <div class="col-md-3">
                             <input type="text" id="patrimonioSituacao" name="patrimonioSituacao" class="form-control"  value="{{ entity.situacao }}">
@@ -57,7 +57,7 @@
 
                     <div class="form-group">
                         <div class="col-md-2">
-                            <label for="lblNome">Nota Fiscal(nº)</label>
+                            <label for="lblNome">Nota Fiscal(n&#186;)</label>
                         </div>
                         <div class="col-md-3">
                             <input type="text" id="patrimonioNotaFiscal" name="patrimonioNotaFiscal" class="form-control"  value="{{ entity.nrnotafiscal }}">
@@ -85,14 +85,6 @@
                                 {% for key, centroCusto in centroCustos %}
                                     <option value='{{ centroCusto.id }}'    >{{ centroCusto.nocentroCusto }}-{{ centroCusto.nrcentroCusto }}</option>  {% endfor %}
                             </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-2">
-                            <label for="lblNome">Imagem</label>
-                        </div>
-                        <div class="col-md-3">
-                            <input type="file" name="patrimonioImagem">
                         </div>
                     </div>
 

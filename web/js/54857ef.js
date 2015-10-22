@@ -5,43 +5,43 @@ $(document).ready(function() {
 
 function validarFormulario(){
     if($('#patrimoniPlaqueta').val() == ''){
-        alert('Numero da Plaqueta é um campo Obrigatório');
+        alert('Numero da Plaqueta e um campo Obrigatorio');
         $('#patrimoniPlaqueta').focus();
         return false;
     }
 
     if($('#patrimonioDescicao').val() == ''){
-        alert('Descrição do Patrimonio é um campo Obrigatório');
+        alert('Descricao do Patrimonio e um campo Obrigatorio');
         $('#patrimonioDescicao').focus();
         return false;
     }
 
     if($('#patrimonioDtAquisicao').val() == ''){
-        alert('Data é um campo Obrigatório');
+        alert('Data e um campo Obrigatorio');
         $('#patrimonioDtAquisicao').focus();
         return false
     }
 
     if($('#patrimonioSituacao').val() == ''){
-        alert('Situação é um campo Obrigatório');
+        alert('Situacao e um campo Obrigatorio');
         $('#patrimonioSituacao').focus();
         return false
     }
 
     if($('#patrimonioNotaFiscal').val() == ''){
-        alert('Numero da Nota Fiscal é um campo Obrigatório');
+        alert('Numero da Nota Fiscal e um campo Obrigatorio');
         $('#patrimonioNotaFiscal').focus();
         return false
     }
 
     if($('#patrimonioCentroCusto').val() == ''){
-        alert('Centro de Custo é um campo Obrigatório');
+        alert('Centro de Custo e um campo Obrigatorio');
         $('#patrimonioCentroCusto').focus();
         return false
     }
 
     if($('#patrimonioContaPatrimonial').val() == '') {
-        alert('Conta Patrimonial é um campo Obrigatório');
+        alert('Conta Patrimonial e um campo Obrigatorio');
         $('#patrimonioContaPatrimonial').focus();
         return false
     }

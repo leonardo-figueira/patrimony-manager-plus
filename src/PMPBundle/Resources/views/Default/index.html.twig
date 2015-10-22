@@ -5,6 +5,11 @@
             <h1 class="page-head-line">Bem vindo {{ usuario.nome }}</h1>
         </div>
     </div>
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert alert-success col-md-12">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
 
     <div class="panel-body">
         <form class="form-horizontal" method="post" action="">

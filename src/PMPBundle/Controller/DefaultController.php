@@ -32,7 +32,7 @@ class DefaultController extends Controller implements ContainerAwareInterface
                     $serviceUsuario = $this->get('pmp.usuario_busca');
                     $serviceUsuario->alterar($usuarioSalvar);
 
-                    $this->addFlash('success', 'Senha Alterado Com sucesso');
+                    $this->addFlash('success', 'Senha Alterada Com sucesso');
 
                     return $this->redirectToRoute('index');
                 } catch (Exception $ex) {
